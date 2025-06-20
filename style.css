@@ -3626,23 +3626,6 @@ body.admin-bar .main-header.ekit-sticky--effects{
 
 /*  Heading Small Icon & Hide Small Icon  */
 
-.section-title .elementor-heading-title{
-	padding-left: 34px;
-	line-height: normal !important;
-}
-
-.section-title .elementor-heading-title::before{
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 0;
-	bottom: 0;
-	transform: translateY(-50%);
-	background: url("assets/images/icon-sub-heading.svg");
-    background-size: cover;
-	width: 20px;
-	height: 20px;
-}
 
 .masterwp-hide-small-icon .section-title .elementor-heading-title::before{
 	display: none;
