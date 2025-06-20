@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$enable_skip_link = apply_filters( 'lenity_theme_enable_skip_link', true );
-$skip_link_url = apply_filters( 'lenity_theme_skip_link_url', '#content' );
+$enable_skip_link = apply_filters( 'masterwp_theme_enable_skip_link', true );
+$skip_link_url = apply_filters( 'masterwp_theme_skip_link_url', '#content' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,7 +26,7 @@ $skip_link_url = apply_filters( 'lenity_theme_skip_link_url', '#content' );
 <?php wp_body_open(); ?>
 
 <?php if ( $enable_skip_link ) { ?>
-<a class="skip-link screen-reader-text" href="<?php echo esc_url( $skip_link_url ); ?>"><?php echo esc_html__( 'Skip to content', 'lenity' ); ?></a>
+<a class="skip-link screen-reader-text" href="<?php echo esc_url( $skip_link_url ); ?>"><?php echo esc_html__( 'Skip to content', 'masterwp' ); ?></a>
 <?php } ?>
 
 <?php

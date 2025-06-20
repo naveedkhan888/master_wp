@@ -5,8 +5,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-global $LENITY_STORAGE;
-$archive_page_layout	=	get_theme_mod( 'programmes_archive_page_layout', $LENITY_STORAGE['programmes_archive_page_layout'] );
+global $MASTERWP_STORAGE;
+$archive_page_layout	=	get_theme_mod( 'programmes_archive_page_layout', $MASTERWP_STORAGE['programmes_archive_page_layout'] );
 if($archive_page_layout == 'full-width') {
 	$column = 'col-md-12';
 }
@@ -14,7 +14,7 @@ else{
 	$column = 'col-lg-9 col-md-12';
 }
 
-$background_image 	= get_theme_mod( 'programmes_page_header_background_image', $LENITY_STORAGE['programmes_page_header_background_image'] );
+$background_image 	= get_theme_mod( 'programmes_page_header_background_image', $MASTERWP_STORAGE['programmes_page_header_background_image'] );
 if($background_image) {
 	$background_image 	= 	wp_get_attachment_image_src( $background_image , 'full' );
 	if(isset($background_image[0])) {
@@ -30,12 +30,12 @@ if($background_image) {
 				<div class="col-md-12">
 					<div class="page-header-box">
 						<h1 class="entry-title"><?php 
-									$lenity_blog_title_text = lenity_get_archive_title();
-									echo wp_kses_data( $lenity_blog_title_text ); ?></h1>
+									$masterwp_blog_title_text = masterwp_get_archive_title();
+									echo wp_kses_data( $masterwp_blog_title_text ); ?></h1>
 								<?php
 									the_archive_description( '<div class="taxonomy-description">', '</div>' );
 								?>
-						<?php do_action('lenity_action_get_breadcrumb'); ?>
+						<?php do_action('masterwp_action_get_breadcrumb'); ?>
 					</div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@ if($background_image) {
 									</div>
 									<div class="program-button blog-item-btn">
 										<?php
-											printf( '<a href="%s">%s </a>', esc_url( $post_link ), __('Read More','lenity'));
+											printf( '<a href="%s">%s </a>', esc_url( $post_link ), __('Read More','masterwp'));
 										?>
 									</div>
 								</div>

@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class lenity_widget_site_Logo extends Widget_Base {
+class masterwp_widget_site_Logo extends Widget_Base {
 
 	/**
 	 * Retrieve the widget name.
@@ -33,7 +33,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'lenity-site-logo';
+		return 'masterwp-site-logo';
 	}
 
 	/**
@@ -46,7 +46,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Lenity - Site Logo', 'lenity' );
+		return __( 'Masterwp - Site Logo', 'masterwp' );
 	}
 
 	/**
@@ -106,17 +106,17 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->start_controls_section(
 			'section_site_image',
 			array(
-				'label' => __( 'Site Logo', 'lenity' ),
+				'label' => __( 'Site Logo', 'masterwp' ),
 			)
 		);
 
 		$this->add_control(
 			'site_logo_fallback',
 			array(
-				'label'       => __( 'Custom Image', 'lenity' ),
+				'label'       => __( 'Custom Image', 'masterwp' ),
 				'type'        => Controls_Manager::SWITCHER,
-				'yes'         => __( 'Yes', 'lenity' ),
-				'no'          => __( 'No', 'lenity' ),
+				'yes'         => __( 'Yes', 'masterwp' ),
+				'no'          => __( 'No', 'masterwp' ),
 				'default'     => 'no',
 				'render_type' => 'template',
 			)
@@ -125,7 +125,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'custom_image',
 			array(
-				'label'     => __( 'Add Image', 'lenity' ),
+				'label'     => __( 'Add Image', 'masterwp' ),
 				'type'      => Controls_Manager::MEDIA,
 				'dynamic'   => array(
 					'active' => true,
@@ -143,26 +143,26 @@ class lenity_widget_site_Logo extends Widget_Base {
 			Group_Control_Image_Size::get_type(),
 			array(
 				'name'    => 'site_logo_size',
-				'label'   => __( 'Image Size', 'lenity' ),
+				'label'   => __( 'Image Size', 'masterwp' ),
 				'default' => 'medium',
 			)
 		);
 		$this->add_responsive_control(
 			'align',
 			array(
-				'label'              => __( 'Alignment', 'lenity' ),
+				'label'              => __( 'Alignment', 'masterwp' ),
 				'type'               => Controls_Manager::CHOOSE,
 				'options'            => array(
 					'left'   => array(
-						'title' => __( 'Left', 'lenity' ),
+						'title' => __( 'Left', 'masterwp' ),
 						'icon'  => 'eicon-text-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'lenity' ),
+						'title' => __( 'Center', 'masterwp' ),
 						'icon'  => 'eicon-text-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'lenity' ),
+						'title' => __( 'Right', 'masterwp' ),
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
@@ -177,11 +177,11 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'caption_source',
 			array(
-				'label'   => __( 'Caption', 'lenity' ),
+				'label'   => __( 'Caption', 'masterwp' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'no'  => __( 'No', 'lenity' ),
-					'yes' => __( 'Yes', 'lenity' ),
+					'no'  => __( 'No', 'masterwp' ),
+					'yes' => __( 'Yes', 'masterwp' ),
 				),
 				'default' => 'no',
 			)
@@ -190,10 +190,10 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'caption',
 			array(
-				'label'       => __( 'Custom Caption', 'lenity' ),
+				'label'       => __( 'Custom Caption', 'masterwp' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
-				'placeholder' => __( 'Enter caption', 'lenity' ),
+				'placeholder' => __( 'Enter caption', 'masterwp' ),
 				'condition'   => array(
 					'caption_source' => 'yes',
 				),
@@ -207,14 +207,14 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'link_to',
 			array(
-				'label'   => __( 'Link', 'lenity' ),
+				'label'   => __( 'Link', 'masterwp' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => array(
-					'default' => __( 'Default', 'lenity' ),
-					'none'    => __( 'None', 'lenity' ),
-					'file'    => __( 'Media File', 'lenity' ),
-					'custom'  => __( 'Custom URL', 'lenity' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'none'    => __( 'None', 'masterwp' ),
+					'file'    => __( 'Media File', 'masterwp' ),
+					'custom'  => __( 'Custom URL', 'masterwp' ),
 				),
 			)
 		);
@@ -222,12 +222,12 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'link',
 			array(
-				'label'       => __( 'Link', 'lenity' ),
+				'label'       => __( 'Link', 'masterwp' ),
 				'type'        => Controls_Manager::URL,
 				'dynamic'     => array(
 					'active' => true,
 				),
-				'placeholder' => __( 'https://your-link.com', 'lenity' ),
+				'placeholder' => __( 'https://your-link.com', 'masterwp' ),
 				'condition'   => array(
 					'link_to' => 'custom',
 				),
@@ -238,13 +238,13 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'open_lightbox',
 			array(
-				'label'     => __( 'Lightbox', 'lenity' ),
+				'label'     => __( 'Lightbox', 'masterwp' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'default',
 				'options'   => array(
-					'default' => __( 'Default', 'lenity' ),
-					'yes'     => __( 'Yes', 'lenity' ),
-					'no'      => __( 'No', 'lenity' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'yes'     => __( 'Yes', 'masterwp' ),
+					'no'      => __( 'No', 'masterwp' ),
 				),
 				'condition' => array(
 					'link_to' => 'file',
@@ -255,7 +255,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'view',
 			array(
-				'label'   => __( 'View', 'lenity' ),
+				'label'   => __( 'View', 'masterwp' ),
 				'type'    => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			)
@@ -272,7 +272,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_site_logo_image',
 			array(
-				'label' => __( 'Site logo', 'lenity' ),
+				'label' => __( 'Site logo', 'masterwp' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -280,7 +280,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_responsive_control(
 			'width',
 			array(
-				'label'              => __( 'Width', 'lenity' ),
+				'label'              => __( 'Width', 'masterwp' ),
 				'type'               => Controls_Manager::SLIDER,
 				'default'            => array(
 					'unit' => '%',
@@ -316,7 +316,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_responsive_control(
 			'space',
 			array(
-				'label'              => __( 'Max Width', 'lenity' ),
+				'label'              => __( 'Max Width', 'masterwp' ),
 				'type'               => Controls_Manager::SLIDER,
 				'default'            => array(
 					'unit' => '%',
@@ -352,7 +352,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_responsive_control(
 			'max_height',
 			array(
-				'label'              => __( 'Max Height', 'lenity' ),
+				'label'              => __( 'Max Height', 'masterwp' ),
 				'type'               => Controls_Manager::SLIDER,
 				'default'            => array(
 					'unit' => 'px',
@@ -396,7 +396,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'site_logo_background_color',
 			array(
-				'label'     => __( 'Background Color', 'lenity' ),
+				'label'     => __( 'Background Color', 'masterwp' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ata-site-logo-set .ata-site-logo-container' => 'background-color: {{VALUE}};',
@@ -407,16 +407,16 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'site_logo_image_border',
 			array(
-				'label'       => __( 'Border Style', 'lenity' ),
+				'label'       => __( 'Border Style', 'masterwp' ),
 				'type'        => Controls_Manager::SELECT,
 				'default'     => 'none',
 				'label_block' => false,
 				'options'     => array(
-					'none'   => __( 'None', 'lenity' ),
-					'solid'  => __( 'Solid', 'lenity' ),
-					'double' => __( 'Double', 'lenity' ),
-					'dotted' => __( 'Dotted', 'lenity' ),
-					'dashed' => __( 'Dashed', 'lenity' ),
+					'none'   => __( 'None', 'masterwp' ),
+					'solid'  => __( 'Solid', 'masterwp' ),
+					'double' => __( 'Double', 'masterwp' ),
+					'dotted' => __( 'Dotted', 'masterwp' ),
+					'dashed' => __( 'Dashed', 'masterwp' ),
 				),
 				'selectors'   => array(
 					'{{WRAPPER}} .ata-site-logo-container .ata-site-logo-img' => 'border-style: {{VALUE}};',
@@ -426,7 +426,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'site_logo_image_border_size',
 			array(
-				'label'      => __( 'Border Width', 'lenity' ),
+				'label'      => __( 'Border Width', 'masterwp' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -448,7 +448,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'site_logo_image_border_color',
 			array(
-				'label'     => __( 'Border Color', 'lenity' ),
+				'label'     => __( 'Border Color', 'masterwp' ),
 				'type'      => Controls_Manager::COLOR,
 				'global'    => array(
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -466,7 +466,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_responsive_control(
 			'image_border_radius',
 			array(
-				'label'              => __( 'Border Radius', 'lenity' ),
+				'label'              => __( 'Border Radius', 'masterwp' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => array( 'px', '%' ),
 				'selectors'          => array(
@@ -492,14 +492,14 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->start_controls_tab(
 			'normal',
 			array(
-				'label' => __( 'Normal', 'lenity' ),
+				'label' => __( 'Normal', 'masterwp' ),
 			)
 		);
 
 		$this->add_control(
 			'opacity',
 			array(
-				'label'     => __( 'Opacity', 'lenity' ),
+				'label'     => __( 'Opacity', 'masterwp' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -527,13 +527,13 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->start_controls_tab(
 			'hover',
 			array(
-				'label' => __( 'Hover', 'lenity' ),
+				'label' => __( 'Hover', 'masterwp' ),
 			)
 		);
 		$this->add_control(
 			'opacity_hover',
 			array(
-				'label'     => __( 'Opacity', 'lenity' ),
+				'label'     => __( 'Opacity', 'masterwp' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -550,7 +550,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'background_hover_transition',
 			array(
-				'label'     => __( 'Transition Duration', 'lenity' ),
+				'label'     => __( 'Transition Duration', 'masterwp' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -575,7 +575,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			array(
-				'label' => __( 'Hover Animation', 'lenity' ),
+				'label' => __( 'Hover Animation', 'masterwp' ),
 				'type'  => Controls_Manager::HOVER_ANIMATION,
 			)
 		);
@@ -596,7 +596,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_caption',
 			array(
-				'label'     => __( 'Caption', 'lenity' ),
+				'label'     => __( 'Caption', 'masterwp' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'caption_source!' => 'none',
@@ -607,7 +607,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			array(
-				'label'     => __( 'Text Color', 'lenity' ),
+				'label'     => __( 'Text Color', 'masterwp' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -622,7 +622,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_control(
 			'caption_background_color',
 			array(
-				'label'     => __( 'Background Color', 'lenity' ),
+				'label'     => __( 'Background Color', 'masterwp' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .widget-image-caption' => 'background-color: {{VALUE}};',
@@ -652,7 +652,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_responsive_control(
 			'caption_padding',
 			array(
-				'label'              => __( 'Padding', 'lenity' ),
+				'label'              => __( 'Padding', 'masterwp' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'size_units'         => array( 'px', 'em', '%' ),
 				'selectors'          => array(
@@ -664,7 +664,7 @@ class lenity_widget_site_Logo extends Widget_Base {
 		$this->add_responsive_control(
 			'caption_space',
 			array(
-				'label'              => __( 'Spacing', 'lenity' ),
+				'label'              => __( 'Spacing', 'masterwp' ),
 				'type'               => Controls_Manager::SLIDER,
 				'range'              => array(
 					'px' => array(

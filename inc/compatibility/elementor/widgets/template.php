@@ -4,18 +4,18 @@ use Elementor\Controls_Manager;
 
 defined( 'ABSPATH' ) || die();
 
-class lenity_widget_template extends Widget_Base {
+class masterwp_widget_template extends Widget_Base {
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
 	}
 
 	public function get_name() {
-		return 'lenity-elementor-template';
+		return 'masterwp-elementor-template';
 	}
 
 	public function get_title() {
-		return __( 'Lenity - Template', 'lenity' );
+		return __( 'Masterwp - Template', 'masterwp' );
 	}
 
 	public function get_icon() {
@@ -27,7 +27,7 @@ class lenity_widget_template extends Widget_Base {
 	}
 	
 	public function get_keywords() {
-		return [ 'lenity', 'elementor', 'template', 'load' ];
+		return [ 'masterwp', 'elementor', 'template', 'load' ];
 	}
 
 	protected function register_controls() {
@@ -36,7 +36,7 @@ class lenity_widget_template extends Widget_Base {
 		$this->start_controls_section(
 			'section_general',
 			[
-				'label' => esc_html__( 'General', 'lenity' ),
+				'label' => esc_html__( 'General', 'masterwp' ),
 			]
 		);
 		
@@ -67,7 +67,7 @@ class lenity_widget_template extends Widget_Base {
 		$this->add_control(
 			'select_template',
 			array(
-				'label' => esc_html__( 'Select Template', 'lenity' ),
+				'label' => esc_html__( 'Select Template', 'masterwp' ),
 				'type'        => Controls_Manager::SELECT,
 				'label_block' => true,
 				'multiple' => false,

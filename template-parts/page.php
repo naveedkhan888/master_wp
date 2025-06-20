@@ -6,13 +6,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-global $LENITY_STORAGE;
+global $MASTERWP_STORAGE;
 while ( have_posts() ) :
 	the_post();
 
 $background_image = get_post_meta(get_the_ID(), 'awaiken_secondary_image', true);
 if(empty($background_image)) {
-	$background_image 	= get_theme_mod( 'header_background_image', $LENITY_STORAGE['header_background_image'] );
+	$background_image 	= get_theme_mod( 'header_background_image', $MASTERWP_STORAGE['header_background_image'] );
 	if($background_image) {
 		$background_image 	= 	wp_get_attachment_image_src( $background_image , 'full' );
 		if(isset($background_image[0])) {
@@ -28,7 +28,7 @@ if(empty($background_image)) {
 				<div class="col-md-12">
 					<div class="page-header-box">
 						<?php the_title( '<h1 class="text-anime">', '</h1>' ); ?>
-						<?php do_action('lenity_action_get_breadcrumb');		?>
+						<?php do_action('masterwp_action_get_breadcrumb');		?>
 					</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@ if(empty($background_image)) {
 						}
 					?>
 					<div class="post-content">
-						<div class="post-entry lenity-block-style">
+						<div class="post-entry masterwp-block-style">
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
 						</div>

@@ -1,6 +1,6 @@
 /*
-Theme Name: Lenity
-Theme URI: https://1.envato.market/lenity-wp
+Theme Name: Masterwp
+Theme URI: https://1.envato.market/masterwp-wp
 Description: Charity & Donation WordPress Theme
 Author: Awaiken Theme
 Author URI: https://awaikenthemes.com/
@@ -10,7 +10,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 License: Themeforest Split Licence
 License URI: https://themeforest.net/licenses/standard
-Text Domain: lenity
+Text Domain: masterwp
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-menu, custom-logo, editor-style, featured-images, threaded-comments, style-variations, blog
 */
 
@@ -3333,10 +3333,10 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	display: block;
 }
 
-.lenity-header-preview .header-version-1,
-.lenity-header-preview .header-version-2,
-.lenity-header-preview .header-version-3,
-.lenity-header-preview .header-version-4{
+.masterwp-header-preview .header-version-1,
+.masterwp-header-preview .header-version-2,
+.masterwp-header-preview .header-version-3,
+.masterwp-header-preview .header-version-4{
 	background-color: var(--e-global-color-primary) !important;
 }
 
@@ -3605,11 +3605,11 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	height: 20px;
 }
 
-.lenity-hide-small-icon .section-title .elementor-heading-title::before{
+.masterwp-hide-small-icon .section-title .elementor-heading-title::before{
 	display: none;
 }
 
-.lenity-hide-small-icon .section-title .elementor-heading-title{
+.masterwp-hide-small-icon .section-title .elementor-heading-title{
 	padding-left: 0;
 }
 

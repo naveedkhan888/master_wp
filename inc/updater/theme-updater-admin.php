@@ -781,7 +781,7 @@ class AWAIKEN_Theme_Updater_Admin {
 /**
  * This is a means of catching errors from the activation method above and displaying it to the customer
  */
-function lenity_theme_admin_notices() {
+function masterwp_theme_admin_notices() {
 	if ( isset( $_GET['sl_theme_activation'] ) && ! empty( $_GET['message'] ) ) {
 
 		switch ( $_GET['sl_theme_activation'] ) {
@@ -802,4 +802,4 @@ function lenity_theme_admin_notices() {
 		}
 	}
 }
-add_action( 'admin_notices', 'lenity_theme_admin_notices' );
+add_action( 'admin_notices', 'masterwp_theme_admin_notices' );

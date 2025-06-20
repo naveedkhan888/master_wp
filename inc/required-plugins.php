@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme Lenity for publication on ThemeForest
+ * @version    2.6.1 for parent theme Masterwp for publication on ThemeForest
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -38,25 +38,25 @@ if ( ! defined( 'ABSPATH' ) ) {
  
 define( 'AWAIKEN_PLUGINS_API_URI', 'https://awaikenthemes.com/wp-json/update-assets/v1/plugins/' );
 define( 'AWAIKEN_PLUGINS_URI', 'https://cdn.awaikenthemes.com/plugins/' );
-function lenity_json_error_license_invalid() {
+function masterwp_json_error_license_invalid() {
     echo '<div class="notice notice-error is-dismissible">
-        <p>' . esc_html( 'Invalid license', 'lenity' ) . '</p>
+        <p>' . esc_html( 'Invalid license', 'masterwp' ) . '</p>
     </div>';
 }
 
-function lenity_json_error_notice() {
+function masterwp_json_error_notice() {
     echo '<div class="notice notice-error is-dismissible">
-        <p>' . esc_html( 'Unable to connect to Awaiken server. Failed to retrieve valid JSON data.', 'lenity' ) . '</p>
+        <p>' . esc_html( 'Unable to connect to Awaiken server. Failed to retrieve valid JSON data.', 'masterwp' ) . '</p>
     </div>';
 }
 
-function lenity_http_error_notice() {
+function masterwp_http_error_notice() {
     echo '<div class="notice notice-error is-dismissible">
-		<p>' . esc_html( 'Unable to connect to Awaiken server. Failed to fetch data from the server.', 'lenity' ) . '</p>
+		<p>' . esc_html( 'Unable to connect to Awaiken server. Failed to fetch data from the server.', 'masterwp' ) . '</p>
     </div>';
 }
 
-function lenity_get_plugin_versions() {
+function masterwp_get_plugin_versions() {
 	
 	$transient_key = AWAIKEN_THEME_SLUG.'_plugin_versions_api_' . md5( AWAIKEN_PLUGINS_API_URI );
 	$cached_response = get_transient( $transient_key );
@@ -113,23 +113,23 @@ function lenity_get_plugin_versions() {
         }
 		else if ( $data !== null && isset( $data['license'] ) && $data['license'] === 'invalid' ) { 
 			// Show an admin notice if license invalid
-            add_action('admin_notices', 'lenity_json_error_license_invalid');
+            add_action('admin_notices', 'masterwp_json_error_license_invalid');
             return null;
 		} 
 		else {
             // Show an admin notice if JSON structure is unexpected
-            add_action('admin_notices', 'lenity_json_error_notice');
+            add_action('admin_notices', 'masterwp_json_error_notice');
             return null;
         }
     } else {
         // Show an admin notice if the HTTP request fails
-        add_action('admin_notices', 'lenity_http_error_notice');
+        add_action('admin_notices', 'masterwp_http_error_notice');
         return null;
     }
 }
-require_once LENITY_THEME_DIR . '/inc/class-tgm-plugin-activation.php';
+require_once MASTERWP_THEME_DIR . '/inc/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'lenity_register_required_plugins' );
+add_action( 'tgmpa_register', 'masterwp_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -148,13 +148,13 @@ add_action( 'tgmpa_register', 'lenity_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function lenity_register_required_plugins() {
+function masterwp_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	 
-	$plugin_versions = lenity_get_plugin_versions();
+	$plugin_versions = masterwp_get_plugin_versions();
 	
 	if ( $plugin_versions !== null ) {
 		$elementskit_version 		= $plugin_versions['elementskit'];
@@ -167,19 +167,19 @@ function lenity_register_required_plugins() {
 
 	$plugins = array(
 		array(
-			'name' 				=> esc_html__('Elementor', 'lenity'),
+			'name' 				=> esc_html__('Elementor', 'masterwp'),
 			'slug' 				=> 'elementor',
 			'required' 			=> true,
 			'external_url' 		=> 'https://wordpress.org/plugins/elementor/',
 		),
 		array(
-			'name' 				=> esc_html__('ElementsKit Lite', 'lenity'),
+			'name' 				=> esc_html__('ElementsKit Lite', 'masterwp'),
 			'slug' 				=> 'elementskit-lite',
 			'required' 			=> true,
 			'external_url' 		=> 'https://wordpress.org/plugins/elementskit-lite/',
 		),
 		array(
-			'name' 				=> esc_html__('ElementsKit Pro', 'lenity'),
+			'name' 				=> esc_html__('ElementsKit Pro', 'masterwp'),
 			'slug' 				=> 'elementskit',
 			'source' 			=> $elementskit_source_url,
 			'required' 			=> true,
@@ -187,29 +187,29 @@ function lenity_register_required_plugins() {
 			'external_url' 		=> 'https://wpmet.com/plugin/elementskit/',
 			),
 		array(
-			'name'              => esc_html__('Lenity Theme Addons', 'lenity'), 
-			'slug'              => 'lenity-theme-addons',
-			'source'            => get_template_directory() . '/assets/plugins/lenity-theme-addons.zip', 
+			'name'              => esc_html__('Masterwp Theme Addons', 'masterwp'), 
+			'slug'              => 'masterwp-theme-addons',
+			'source'            => get_template_directory() . '/assets/plugins/masterwp-theme-addons.zip', 
 			'version'			=> '1.0.0',
 			'required'          => true, 
 		),
 		array(
-			'name'      		=> esc_html__('Contact Form 7', 'lenity'),
+			'name'      		=> esc_html__('Contact Form 7', 'masterwp'),
 			'slug'      		=> 'contact-form-7',
 			'required'  		=> true,
 		),
 		array(
-			'name'     			=> esc_html__('GiveWP – Donation', 'lenity'),
+			'name'     			=> esc_html__('GiveWP – Donation', 'masterwp'),
 			'slug'      		=> 'give',
 			'required'  		=> true,
 		),
 		array(
-			'name'     			=> esc_html__('GiveWP Donation Widgets for Elementor', 'lenity'),
+			'name'     			=> esc_html__('GiveWP Donation Widgets for Elementor', 'masterwp'),
 			'slug'      		=> 'givewp-donation-widgets-for-elementor',
 			'required'  		=> true,
 		),
 		array(
-			'name'     			=> esc_html__('One Click Demo Import', 'lenity') ,
+			'name'     			=> esc_html__('One Click Demo Import', 'masterwp') ,
 			'slug'      		=> 'one-click-demo-import',
 			'required'  		=> false,
 		)
@@ -225,7 +225,7 @@ function lenity_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'lenity',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'masterwp',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.

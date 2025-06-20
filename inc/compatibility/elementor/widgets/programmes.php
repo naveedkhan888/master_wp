@@ -4,7 +4,7 @@ use Elementor\Controls_Manager;
 
 defined( 'ABSPATH' ) || die();
 
-class lenity_widget_programmes extends Widget_Base {
+class masterwp_widget_programmes extends Widget_Base {
 
 	private $_query = null;
 
@@ -13,11 +13,11 @@ class lenity_widget_programmes extends Widget_Base {
 	}
 
 	public function get_name() {
-		return 'lenity-programmes-grid';
+		return 'masterwp-programmes-grid';
 	}
 
 	public function get_title() {
-		return __( 'Lenity - Programmes Grid', 'lenity' );
+		return __( 'Masterwp - Programmes Grid', 'masterwp' );
 	}
 
 	public function get_icon() {
@@ -42,7 +42,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->start_controls_section(
 			'section_layout',
 			[
-				'label' => __( 'Layout', 'lenity' ),
+				'label' => __( 'Layout', 'masterwp' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -51,11 +51,11 @@ class lenity_widget_programmes extends Widget_Base {
 			'grid_layout',
 			[
 				'type' => Controls_Manager::SELECT,
-				'label' => esc_html__( 'Layout', 'lenity' ),
+				'label' => esc_html__( 'Layout', 'masterwp' ),
 				'default' => 'grid',
 				'options' => [
-					'grid' => esc_html__( 'Grid', 'lenity' ),
-					'masonry' => esc_html__( 'Masonry', 'lenity' ),
+					'grid' => esc_html__( 'Grid', 'masterwp' ),
+					'masonry' => esc_html__( 'Masonry', 'masterwp' ),
 				],
 				'frontend_available' => true,
 			]
@@ -64,7 +64,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label' => esc_html__( 'Columns', 'lenity' ),
+				'label' => esc_html__( 'Columns', 'masterwp' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '3',
 				'tablet_default' => '2',
@@ -84,7 +84,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'posts_per_page',
 			[
-				'label' => esc_html__( 'Posts Per Page', 'lenity' ),
+				'label' => esc_html__( 'Posts Per Page', 'masterwp' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 99,
 			]
@@ -95,7 +95,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->start_controls_section(
 			'section_design_layout',
 			[
-				'label' => esc_html__( 'Items', 'lenity' ),
+				'label' => esc_html__( 'Items', 'masterwp' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -103,7 +103,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'item_design',
 			[
-				'label' => esc_html__( 'Item Design', 'lenity' ),
+				'label' => esc_html__( 'Item Design', 'masterwp' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'1' => 'Minimal',
@@ -116,7 +116,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'item_spacing',
 			[
-				'label' => esc_html__( 'Item Spacing', 'lenity' ),
+				'label' => esc_html__( 'Item Spacing', 'masterwp' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'0' => '0px',
@@ -140,7 +140,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->start_controls_section(
 			'section_settings',
 			[
-				'label' => __( 'Settings', 'lenity' ),
+				'label' => __( 'Settings', 'masterwp' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -148,10 +148,10 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'show_filter_bar',
 			[
-				'label' => esc_html__( 'Show Filter', 'lenity' ),
+				'label' => esc_html__( 'Show Filter', 'masterwp' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_off' => esc_html__( 'Hide', 'lenity' ),
-				'label_on' => esc_html__( 'Show', 'lenity' ),
+				'label_off' => esc_html__( 'Hide', 'masterwp' ),
+				'label_on' => esc_html__( 'Show', 'masterwp' ),
 				'return_value' => 'yes',
                 'default' => '',
 			]
@@ -173,8 +173,8 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'filter_category',
 			array(
-				'label' => esc_html__( 'Select Category', 'lenity' ),
-				'description' => esc_html__( 'If no category is selected, it will display all categories.', 'lenity' ),
+				'label' => esc_html__( 'Select Category', 'masterwp' ),
+				'description' => esc_html__( 'If no category is selected, it will display all categories.', 'masterwp' ),
 				'type'        => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'multiple' => true,
@@ -188,7 +188,7 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'filter_design',
 			[
-				'label' => esc_html__( 'Filter Design', 'lenity' ),
+				'label' => esc_html__( 'Filter Design', 'masterwp' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'1' => 'Boxed',
@@ -204,10 +204,10 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
 			'show_all_filter_label',
 			[
-				'label' => esc_html__( 'Show "All" Filter Label', 'lenity' ),
+				'label' => esc_html__( 'Show "All" Filter Label', 'masterwp' ),
 				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'lenity' ),
-				'label_off' => esc_html__( 'Hide', 'lenity' ),
+				'label_on' => esc_html__( 'Show', 'masterwp' ),
+				'label_off' => esc_html__( 'Hide', 'masterwp' ),
 				'return_value' => 'yes',
                 'default' => 'yes',
 				'condition' => [
@@ -219,9 +219,9 @@ class lenity_widget_programmes extends Widget_Base {
 		$this->add_control(
             'filter_all_label',
             [
-                'label' => esc_html__( '"All" Filter Label', 'lenity' ),
+                'label' => esc_html__( '"All" Filter Label', 'masterwp' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'All', 'lenity' ),
+                'default' => esc_html__( 'All', 'masterwp' ),
 				'condition' => [
 					'show_filter_bar' => 'yes',
 					'show_all_filter_label' => 'yes',

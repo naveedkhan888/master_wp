@@ -26,20 +26,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 /**
- * Shows a breadcrumb for all types of pages.  This is a wrapper function for the lenity_get_breadcrumb class,
+ * Shows a breadcrumb for all types of pages.  This is a wrapper function for the masterwp_get_breadcrumb class,
  * which should be used in theme templates.
  *
  * @since  0.1.0
  * @access public
- * @param  array $args Arguments to pass to lenity_get_breadcrumb.
+ * @param  array $args Arguments to pass to masterwp_get_breadcrumb.
  * @return void
  */
-function lenity_get_breadcrumb( $args = array() ) {
+function masterwp_get_breadcrumb( $args = array() ) {
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
 	if ( ! is_object( $breadcrumb ) )
-		$breadcrumb = new lenity_breadcrumb_trail( $args );
+		$breadcrumb = new masterwp_breadcrumb_trail( $args );
 
 	return $breadcrumb->trail();
 }
@@ -50,7 +50,7 @@ function lenity_get_breadcrumb( $args = array() ) {
  * @since  0.6.0
  * @access public
  */
-class lenity_breadcrumb_trail {
+class masterwp_breadcrumb_trail {
 
 	/**
 	 * Array of items belonging to the current breadcrumb trail.
@@ -264,21 +264,21 @@ class lenity_breadcrumb_trail {
 	protected function set_labels() {
 
 		$defaults = array(
-			'browse'              => esc_html__( 'Browse:',                               'lenity' ),
-			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'lenity' ),
-			'home'                => esc_html__( 'Home',                                  'lenity' ),
-			'error_404'           => esc_html__( '404 Error Page',                        'lenity' ),
-			'archives'            => esc_html__( 'Archives',                              'lenity' ),
+			'browse'              => esc_html__( 'Browse:',                               'masterwp' ),
+			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'masterwp' ),
+			'home'                => esc_html__( 'Home',                                  'masterwp' ),
+			'error_404'           => esc_html__( '404 Error Page',                        'masterwp' ),
+			'archives'            => esc_html__( 'Archives',                              'masterwp' ),
 			// Translators: %s is the search query.
-			'search'              => esc_html__( 'Search results for: %s',                'lenity' ),
+			'search'              => esc_html__( 'Search results for: %s',                'masterwp' ),
 			// Translators: %s is the page number.
-			'paged'               => esc_html__( 'Page %s',                               'lenity' ),
+			'paged'               => esc_html__( 'Page %s',                               'masterwp' ),
 			// Translators: %s is the page number.
-			'paged_comments'      => esc_html__( 'Comment Page %s',                       'lenity' ),
+			'paged_comments'      => esc_html__( 'Comment Page %s',                       'masterwp' ),
 			// Translators: Minute archive title. %s is the minute time format.
-			'archive_minute'      => esc_html__( 'Minute %s',                             'lenity' ),
+			'archive_minute'      => esc_html__( 'Minute %s',                             'masterwp' ),
 			// Translators: Weekly archive title. %s is the week date format.
-			'archive_week'        => esc_html__( 'Week %s',                               'lenity' ),
+			'archive_week'        => esc_html__( 'Week %s',                               'masterwp' ),
 
 			// "%s" is replaced with the translated date/time format.
 			'archive_minute_hour' => '%s',
@@ -738,7 +738,7 @@ class lenity_breadcrumb_trail {
 
 		// Add the minute + hour item.
 		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'lenity' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'masterwp' ) ) );
 	}
 
 	/**
@@ -755,7 +755,7 @@ class lenity_breadcrumb_trail {
 
 		// Add the minute item.
 		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'lenity' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'masterwp' ) ) );
 	}
 
 	/**
@@ -772,7 +772,7 @@ class lenity_breadcrumb_trail {
 
 		// Add the hour item.
 		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'lenity' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'masterwp' ) ) );
 	}
 
 	/**
@@ -788,9 +788,9 @@ class lenity_breadcrumb_trail {
 		$this->add_rewrite_front_items();
 
 		// Get year, month, and day.
-		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'lenity' ) ) );
-		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'lenity' ) ) );
-		$day   = sprintf( $this->labels['archive_day'],   get_the_time( esc_html_x( 'j', 'daily archives date format',   'lenity' ) ) );
+		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'masterwp' ) ) );
+		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'masterwp' ) ) );
+		$day   = sprintf( $this->labels['archive_day'],   get_the_time( esc_html_x( 'j', 'daily archives date format',   'masterwp' ) ) );
 
 		// Add the year and month items.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -817,8 +817,8 @@ class lenity_breadcrumb_trail {
 		$this->add_rewrite_front_items();
 
 		// Get the year and week.
-		$year = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'lenity' ) ) );
-		$week = sprintf( $this->labels['archive_week'],  get_the_time( esc_html_x( 'W', 'weekly archives date format', 'lenity' ) ) );
+		$year = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'masterwp' ) ) );
+		$week = sprintf( $this->labels['archive_week'],  get_the_time( esc_html_x( 'W', 'weekly archives date format', 'masterwp' ) ) );
 
 		// Add the year item.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -844,8 +844,8 @@ class lenity_breadcrumb_trail {
 		$this->add_rewrite_front_items();
 
 		// Get the year and month.
-		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'lenity' ) ) );
-		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'lenity' ) ) );
+		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'masterwp' ) ) );
+		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'masterwp' ) ) );
 
 		// Add the year item.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -871,7 +871,7 @@ class lenity_breadcrumb_trail {
 		$this->add_rewrite_front_items();
 
 		// Get the year.
-		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'lenity' ) ) );
+		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'masterwp' ) ) );
 
 		// Add the year item.
 		if ( is_paged() )
@@ -1211,15 +1211,15 @@ class lenity_breadcrumb_trail {
 
 				// If using the %year% tag, add a link to the yearly archive.
 				if ( '%year%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'lenity' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'masterwp' ) ) ) );
 
 				// If using the %monthnum% tag, add a link to the monthly archive.
 				elseif ( '%monthnum%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'lenity' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'masterwp' ) ) ) );
 
 				// If using the %day% tag, add a link to the daily archive.
 				elseif ( '%day%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'lenity' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'masterwp' ) ) ) );
 
 				// If using the %author% tag, add a link to the post author archive.
 				elseif ( '%author%' == $tag )

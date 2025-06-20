@@ -756,7 +756,7 @@
 	
 	// Elementor frontend hook
 	$window.on("elementor/frontend/init", function () {
-		elementorFrontend.hooks.addAction("frontend/element_ready/lenity-programmes-grid.default", programmes_grid	);
+		elementorFrontend.hooks.addAction("frontend/element_ready/masterwp-programmes-grid.default", programmes_grid	);
 	});
 	
 	

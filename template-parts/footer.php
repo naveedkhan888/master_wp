@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							<?php 
 						}
-						$social_profiles = lenity_get_social_media();
+						$social_profiles = masterwp_get_social_media();
 						if($social_profiles) {
 						?>
 						<div class="footer-social">
@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php if( get_theme_mod('footer_copyright_text','') ) { ?>
 							<p><?php echo wp_kses_post( get_theme_mod('footer_copyright_text') ); ?></p>
 						<?php } else { ?>
-							<p><?php esc_html_e( 'Created by Awaiken, Powered by WordPress. All rights reserved', 'lenity' ); ?></p>
+							<p><?php esc_html_e( 'Created by Awaiken, Powered by WordPress. All rights reserved', 'masterwp' ); ?></p>
 						<?php } ?>
 					</div>
 				</div>

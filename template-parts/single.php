@@ -6,7 +6,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-global $LENITY_STORAGE;
+global $MASTERWP_STORAGE;
 $blog_single_page_layout	=	get_theme_mod( 'blog_single_page_layout', 'full-width' );
 if($blog_single_page_layout == 'full-width') {
 	$column = 'col-md-12';
@@ -21,7 +21,7 @@ while ( have_posts() ) :
 	
 	$secondary_image = get_post_meta(get_the_ID(), 'awaiken_secondary_image', true);
 	if(empty($secondary_image)) {
-		$background_image 	= get_theme_mod( 'blog_page_header_background_image',$LENITY_STORAGE['blog_page_header_background_image'] );
+		$background_image 	= get_theme_mod( 'blog_page_header_background_image',$MASTERWP_STORAGE['blog_page_header_background_image'] );
 		if($background_image) {
 			$background_image 	= 	wp_get_attachment_image_src( $background_image , 'full' );
 			if(isset($background_image[0])) {
@@ -29,7 +29,7 @@ while ( have_posts() ) :
 			}
 		}
 		else{
-			$background_image 	= get_theme_mod( 'header_background_image', $LENITY_STORAGE['header_background_image'] );
+			$background_image 	= get_theme_mod( 'header_background_image', $MASTERWP_STORAGE['header_background_image'] );
 			if($background_image) {
 				$background_image 	= 	wp_get_attachment_image_src( $background_image , 'full' );
 				if(isset($background_image[0])) {
@@ -51,7 +51,7 @@ while ( have_posts() ) :
 								<li><i class="fa-solid fa-calendar-days"></i><?php echo get_the_date(); ?></li>
 								<li><i class="fa-solid fa-tag"></i>
 									<?php
-										printf( '%s %s', esc_html( '', 'lenity' ), get_the_category_list(', ') );
+										printf( '%s %s', esc_html( '', 'masterwp' ), get_the_category_list(', ') );
 									?>
 								</li>
 							</ul>
@@ -73,7 +73,7 @@ while ( have_posts() ) :
 
 				<div class="<?php echo esc_attr( $column ); ?>">
 					<div class="post-content">
-						<div class="post-entry lenity-block-style">
+						<div class="post-entry masterwp-block-style">
 							<?php the_content(); ?>
 							<?php wp_link_pages(); ?>
 						</div>
@@ -81,12 +81,12 @@ while ( have_posts() ) :
 						<div class="row align-items-center">
 							<div class="col-lg-8">
 								<div class="post-tags">
-								<?php the_tags( '<span class="tag-links">' . esc_html__( 'Tags:', 'lenity' ), '', '</span>' ); ?>
+								<?php the_tags( '<span class="tag-links">' . esc_html__( 'Tags:', 'masterwp' ), '', '</span>' ); ?>
 								</div>
 							</div>
 
 							<div class="col-lg-4">
-								<?php do_action('lenity_action_social_sharing'); ?>
+								<?php do_action('masterwp_action_social_sharing'); ?>
 							</div>
 						</div>
 					</div>

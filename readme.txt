@@ -1,2 +1,2 @@
 
-Read documentation from here : https://docs.awaikenthemes.com/lenity/
+Read documentation from here : https://docs.awaikenthemes.com/masterwp/

@@ -20,7 +20,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		protected $skyrocketCustomControlsCssVersion = '1.3';
 		protected $skyrocketCustomControlsJsVersion = '1.2';
 		protected function get_skyrocket_resource_url() {
-			return LENITY_THEME_URL . '/inc/customizer/';
+			return MASTERWP_THEME_URL . '/inc/customizer/';
 		}
 	}
 
@@ -35,7 +35,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		protected $skyrocketCustomControlsCssVersion = '1.3';
 		protected $skyrocketCustomControlsJsVersion = '1.2';
 		protected function get_skyrocket_resource_url() {
-			return LENITY_THEME_URL . '/inc/customizer/';
+			return MASTERWP_THEME_URL . '/inc/customizer/';
 		}
 	}
 
@@ -370,7 +370,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			// Merge the passed button labels with our default labels
 			$this->button_labels = wp_parse_args( $this->button_labels,
 				array(
-					'add' => __( 'Add', 'lenity' ),
+					'add' => __( 'Add', 'masterwp' ),
 				)
 			);
 		}

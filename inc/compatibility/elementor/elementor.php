@@ -57,35 +57,35 @@ class Awaiken_Elementor {
 	 */
 	public static function register_new_widgets( $widgets_manager ) {
 
-		require_once LENITY_THEME_DIR . '/inc/compatibility/elementor/widgets/site-logo.php';
-		require_once LENITY_THEME_DIR . '/inc/compatibility/elementor/widgets/programmes.php';
-		require_once LENITY_THEME_DIR . '/inc/compatibility/elementor/widgets/template.php';
-		require_once LENITY_THEME_DIR . '/inc/compatibility/elementor/widgets/breadcrumb.php';
+		require_once MASTERWP_THEME_DIR . '/inc/compatibility/elementor/widgets/site-logo.php';
+		require_once MASTERWP_THEME_DIR . '/inc/compatibility/elementor/widgets/programmes.php';
+		require_once MASTERWP_THEME_DIR . '/inc/compatibility/elementor/widgets/template.php';
+		require_once MASTERWP_THEME_DIR . '/inc/compatibility/elementor/widgets/breadcrumb.php';
 
-		$widgets_manager->register( new \lenity_widget_site_Logo() );
-		$widgets_manager->register( new \lenity_widget_programmes() );
-		$widgets_manager->register( new \lenity_widget_template() );
-		$widgets_manager->register( new \lenity_widget_breadcrumb() );
+		$widgets_manager->register( new \masterwp_widget_site_Logo() );
+		$widgets_manager->register( new \masterwp_widget_programmes() );
+		$widgets_manager->register( new \masterwp_widget_template() );
+		$widgets_manager->register( new \masterwp_widget_breadcrumb() );
 
 	}
 	
 	public static function elementor_editor_styles() {
-		wp_enqueue_style( 'lenity-elementor-editor', LENITY_THEME_URL . '/assets/css/elementor-editor.css', array(), LENITY_THEME_VERSION );
+		wp_enqueue_style( 'masterwp-elementor-editor', MASTERWP_THEME_URL . '/assets/css/elementor-editor.css', array(), MASTERWP_THEME_VERSION );
 		
 		if ( !defined( 'ELEMENTOR_PRO_VERSION' ) ) {
 			$custom_css = " #elementor-panel-category-pro-elements, #elementor-panel-category-theme-elements, #elementor-panel-category-theme-elements-single, #elementor-panel-category-woocommerce-elements { display: none !important; } ";
-			wp_add_inline_style( 'lenity-elementor-editor', $custom_css );
+			wp_add_inline_style( 'masterwp-elementor-editor', $custom_css );
 		}
 	}
 	
 	public static function elementor_preview_styles() {
-		wp_enqueue_style( 'lenity-elementor-preview-style', LENITY_THEME_URL . '/assets/css/elementor-preview.css', array(), LENITY_THEME_VERSION );
+		wp_enqueue_style( 'masterwp-elementor-preview-style', MASTERWP_THEME_URL . '/assets/css/elementor-preview.css', array(), MASTERWP_THEME_VERSION );
 	}
 	
 	public function update_default_elementor_kit() {
 
-		add_option( 'default_lenity_kit', 0 );
-		if ( get_option( 'default_lenity_kit' ) == 0 ) {
+		add_option( 'default_masterwp_kit', 0 );
+		if ( get_option( 'default_masterwp_kit' ) == 0 ) {
 
 			$kit = \Elementor\Plugin::$instance->kits_manager->get_active_kit();
 
@@ -144,7 +144,7 @@ class Awaiken_Elementor {
 			] );
 
 			\Elementor\Plugin::instance()->files_manager->clear_cache();
-			update_option( 'default_lenity_kit', 1 );
+			update_option( 'default_masterwp_kit', 1 );
 		}
 	}
 			

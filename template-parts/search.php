@@ -6,7 +6,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-global $LENITY_STORAGE;
+global $MASTERWP_STORAGE;
 $archive_page_layout	=	get_theme_mod( 'archive_page_layout', 'full-width' );
 if($archive_page_layout == 'full-width') {
 	$column = 'col-md-12';
@@ -15,7 +15,7 @@ else{
 	$column = 'col-lg-9 col-md-12';
 }
 
-$background_image 	= get_theme_mod( 'header_background_image', $LENITY_STORAGE['header_background_image'] );
+$background_image 	= get_theme_mod( 'header_background_image', $MASTERWP_STORAGE['header_background_image'] );
 if($background_image) {
 	$background_image 	= 	wp_get_attachment_image_src( $background_image , 'full' );
 	if(isset($background_image[0])) {
@@ -31,8 +31,8 @@ if($background_image) {
 				<div class="col-md-12">
 					<div class="page-header-box">
 						<h1 class="entry-title"><?php 
-									$lenity_blog_title_text = lenity_get_archive_title();
-										echo wp_kses_data( $lenity_blog_title_text ); ?></h1>
+									$masterwp_blog_title_text = masterwp_get_archive_title();
+										echo wp_kses_data( $masterwp_blog_title_text ); ?></h1>
 					</div>
 				</div>
 			</div>
@@ -72,7 +72,7 @@ if($background_image) {
 								</div>
 								<div class="blog-item-btn">
 									<?php
-										printf( '<a href="%s">%s </a>', esc_url( $post_link ), __('Read More','lenity'));
+										printf( '<a href="%s">%s </a>', esc_url( $post_link ), __('Read More','masterwp'));
 									?>
 								</div>
 							</div>
@@ -81,7 +81,7 @@ if($background_image) {
 					
 					<?php else : ?>
 					<div class="col-md-12 text-center">
-							<p><?php echo esc_html__( 'It seems we can\'t find what you\'re looking for.', 'lenity' ); ?></p>
+							<p><?php echo esc_html__( 'It seems we can\'t find what you\'re looking for.', 'masterwp' ); ?></p>
 					</div>
 					<?php endif; ?>
 							<div class="col-md-12">

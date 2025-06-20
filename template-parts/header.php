@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						'menu_class' => 'navbar-nav mr-auto', 
 						'li_class'  => 'nav-item', 
 						'a_tag_class'  => 'nav-link', 
-						'fallback_cb' => 'lenity_fallback' ] 
+						'fallback_cb' => 'masterwp_fallback' ] 
 					); 
 				?>
 			

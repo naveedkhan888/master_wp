@@ -9,9 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 if ( ! function_exists( 'awaiken_generate_defaults' ) ) {
 	function awaiken_generate_defaults() {
-		global $LENITY_STORAGE;
+		global $MASTERWP_STORAGE;
 
-		return apply_filters( 'awaiken_customizer_defaults', $LENITY_STORAGE );
+		return apply_filters( 'awaiken_customizer_defaults', $MASTERWP_STORAGE );
 	}
 }
 
@@ -58,22 +58,22 @@ class awaiken_initialise_customizer_settings {
 		
 		// Add section general options
 		$wp_customize->add_section( 'general_options' , array(
-			'title'      => __( 'General Options', 'lenity' ),
+			'title'      => __( 'General Options', 'masterwp' ),
 		) );
 		
 		// Add section programmes options
 		$wp_customize->add_section( 'programmes_options' , array(
-			'title'      => __( 'Programmes Options', 'lenity' ),
+			'title'      => __( 'Programmes Options', 'masterwp' ),
 		) );
 		
 		// Add section blog options
 		$wp_customize->add_section( 'blog_options' , array(
-			'title'      => __( 'Blog Options', 'lenity' ),
+			'title'      => __( 'Blog Options', 'masterwp' ),
 		) );
 		
 		// Add section footer options
 		$wp_customize->add_section( 'footer_options' , array(
-			'title'      => __( 'Footer Options', 'lenity' ),
+			'title'      => __( 'Footer Options', 'masterwp' ),
 		) );
 		
 	}
@@ -97,8 +97,8 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'show_preloader',
 			array(
-				'label' => __( 'Preloader', 'lenity' ),
-				'description' => esc_html__( 'Display preloader while the page is loading.', 'lenity' ),
+				'label' => __( 'Preloader', 'masterwp' ),
+				'description' => esc_html__( 'Display preloader while the page is loading.', 'masterwp' ),
 				'section' => $section
 			)
 		) );
@@ -113,8 +113,8 @@ class awaiken_initialise_customizer_settings {
 		);
 		$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'magic_cursor',
 			array(
-				'label' => __( 'Magic Cursor', 'lenity' ),
-				'description' => esc_html__( 'Show Magic Cursor.', 'lenity' ),
+				'label' => __( 'Magic Cursor', 'masterwp' ),
+				'description' => esc_html__( 'Show Magic Cursor.', 'masterwp' ),
 				'section' => $section
 			)
 		) );
@@ -130,8 +130,8 @@ class awaiken_initialise_customizer_settings {
 		);
 		$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'smooth_scrolling',
 			array(
-				'label' => __( 'Smooth Scrolling', 'lenity' ),
-				'description' => esc_html__( 'Smooth Scrolling Disable/Enable', 'lenity' ),
+				'label' => __( 'Smooth Scrolling', 'masterwp' ),
+				'description' => esc_html__( 'Smooth Scrolling Disable/Enable', 'masterwp' ),
 				'section' => $section
 			)
 		) );
@@ -147,8 +147,8 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'show_small_heading_icon',
 			array(
-				'label' => __( 'Display Small Icon', 'lenity' ),
-				'description' => esc_html__( 'Display small icon before small heading.', 'lenity' ),
+				'label' => __( 'Display Small Icon', 'masterwp' ),
+				'description' => esc_html__( 'Display small icon before small heading.', 'masterwp' ),
 				'section' => $section
 			)
 		) );
@@ -164,18 +164,18 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'small_heading_icon',
 			array(
-				'label' => __( 'Small heading icon', 'lenity' ),
-				'description' => esc_html__( 'If you want to change the current icon, select it here.', 'lenity' ),
+				'label' => __( 'Small heading icon', 'masterwp' ),
+				'description' => esc_html__( 'If you want to change the current icon, select it here.', 'masterwp' ),
 				'section' => $section,
 				'mime_type' => 'image',
 				'button_labels' => array(
-					'select' => __( 'Select File', 'lenity' ),
-					'change' => __( 'Change File', 'lenity' ),
-					'default' => __( 'Default', 'lenity' ),
-					'remove' => __( 'Remove', 'lenity' ),
-					'placeholder' => __( 'No file selected', 'lenity' ),
-					'frame_title' => __( 'Select File', 'lenity' ),
-					'frame_button' => __( 'Choose File', 'lenity' ),
+					'select' => __( 'Select File', 'masterwp' ),
+					'change' => __( 'Change File', 'masterwp' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'remove' => __( 'Remove', 'masterwp' ),
+					'placeholder' => __( 'No file selected', 'masterwp' ),
+					'frame_title' => __( 'Select File', 'masterwp' ),
+					'frame_button' => __( 'Choose File', 'masterwp' ),
 				)
 			)
 		) );
@@ -191,18 +191,18 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'preloader_icon',
 			array(
-				'label' => __( 'Preloader icon', 'lenity' ),
-				'description' => esc_html__( 'If you want to change the current loading icon, select it here.', 'lenity' ),
+				'label' => __( 'Preloader icon', 'masterwp' ),
+				'description' => esc_html__( 'If you want to change the current loading icon, select it here.', 'masterwp' ),
 				'section' => $section,
 				'mime_type' => 'image',
 				'button_labels' => array(
-					'select' => __( 'Select File', 'lenity' ),
-					'change' => __( 'Change File', 'lenity' ),
-					'default' => __( 'Default', 'lenity' ),
-					'remove' => __( 'Remove', 'lenity' ),
-					'placeholder' => __( 'No file selected', 'lenity' ),
-					'frame_title' => __( 'Select File', 'lenity' ),
-					'frame_button' => __( 'Choose File', 'lenity' ),
+					'select' => __( 'Select File', 'masterwp' ),
+					'change' => __( 'Change File', 'masterwp' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'remove' => __( 'Remove', 'masterwp' ),
+					'placeholder' => __( 'No file selected', 'masterwp' ),
+					'frame_title' => __( 'Select File', 'masterwp' ),
+					'frame_button' => __( 'Choose File', 'masterwp' ),
 				)
 			)
 		) );
@@ -218,18 +218,18 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'header_background_image',
 			array(
-				'label' => __( 'Header Background Image', 'lenity' ),
-				'description' => esc_html__( 'Header background image is intended for pages that are not created using Elementor.', 'lenity' ),
+				'label' => __( 'Header Background Image', 'masterwp' ),
+				'description' => esc_html__( 'Header background image is intended for pages that are not created using Elementor.', 'masterwp' ),
 				'section' => $section,
 				'mime_type' => 'image',
 				'button_labels' => array(
-					'select' => __( 'Select File', 'lenity' ),
-					'change' => __( 'Change File', 'lenity' ),
-					'default' => __( 'Default', 'lenity' ),
-					'remove' => __( 'Remove', 'lenity' ),
-					'placeholder' => __( 'No file selected', 'lenity' ),
-					'frame_title' => __( 'Select File', 'lenity' ),
-					'frame_button' => __( 'Choose File', 'lenity' ),
+					'select' => __( 'Select File', 'masterwp' ),
+					'change' => __( 'Change File', 'masterwp' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'remove' => __( 'Remove', 'masterwp' ),
+					'placeholder' => __( 'No file selected', 'masterwp' ),
+					'frame_title' => __( 'Select File', 'masterwp' ),
+					'frame_button' => __( 'Choose File', 'masterwp' ),
 				)
 			)
 		) );
@@ -254,7 +254,7 @@ class awaiken_initialise_customizer_settings {
 		$wp_customize->add_control( 'programmes_page_title', array(
 			'type' => 'text',
 			'section' => $section,
-			'label'       => esc_html__( 'Programmes Page Archive Title', 'lenity' ),
+			'label'       => esc_html__( 'Programmes Page Archive Title', 'masterwp' ),
 		) );
 		
 		// Header background image
@@ -268,18 +268,18 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'programmes_page_header_background_image',
 			array(
-				'label' => __( 'Header Background Image', 'lenity' ),
-				'description' => esc_html__( 'Header background image for programmes archive and single pages that are not created using Elementor.', 'lenity' ),
+				'label' => __( 'Header Background Image', 'masterwp' ),
+				'description' => esc_html__( 'Header background image for programmes archive and single pages that are not created using Elementor.', 'masterwp' ),
 				'section' => $section,
 				'mime_type' => 'image',
 				'button_labels' => array(
-					'select' => __( 'Select File', 'lenity' ),
-					'change' => __( 'Change File', 'lenity' ),
-					'default' => __( 'Default', 'lenity' ),
-					'remove' => __( 'Remove', 'lenity' ),
-					'placeholder' => __( 'No file selected', 'lenity' ),
-					'frame_title' => __( 'Select File', 'lenity' ),
-					'frame_button' => __( 'Choose File', 'lenity' ),
+					'select' => __( 'Select File', 'masterwp' ),
+					'change' => __( 'Change File', 'masterwp' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'remove' => __( 'Remove', 'masterwp' ),
+					'placeholder' => __( 'No file selected', 'masterwp' ),
+					'frame_title' => __( 'Select File', 'masterwp' ),
+					'frame_button' => __( 'Choose File', 'masterwp' ),
 				)
 			)
 		) );
@@ -291,13 +291,13 @@ class awaiken_initialise_customizer_settings {
 		) );
 		
 		$wp_customize->add_control( 'programmes_archive_page_layout', array(
-			  'label'          => __( 'Programmes Archive Page Layout', 'lenity' ),
+			  'label'          => __( 'Programmes Archive Page Layout', 'masterwp' ),
 			  'section' => $section,
 			  'settings' => 'programmes_archive_page_layout',
 			  'type' => 'radio',
 			  'choices' => array(
-				'full-width'   => __( 'Full Width', 'lenity' ),
-				'with-sidebar'  => __( 'With Sidebar', 'lenity' )
+				'full-width'   => __( 'Full Width', 'masterwp' ),
+				'with-sidebar'  => __( 'With Sidebar', 'masterwp' )
 			  ),
 		) );
 		
@@ -308,14 +308,14 @@ class awaiken_initialise_customizer_settings {
 		) );
 		
 		$wp_customize->add_control( 'programmes_single_page_layout', array(
-			  'label'          => __( 'Programmes Single Layout', 'lenity' ),
-			  'description' => esc_html__( 'Works with the Default Template only.', 'lenity' ),
+			  'label'          => __( 'Programmes Single Layout', 'masterwp' ),
+			  'description' => esc_html__( 'Works with the Default Template only.', 'masterwp' ),
 			  'section' => $section,
 			  'settings' => 'programmes_single_page_layout',
 			  'type' => 'radio',
 			  'choices' => array(
-				'full-width'   => __( 'Full Width', 'lenity' ),
-				'with-sidebar'  => __( 'With Sidebar', 'lenity' )
+				'full-width'   => __( 'Full Width', 'masterwp' ),
+				'with-sidebar'  => __( 'With Sidebar', 'masterwp' )
 			  ),
 		) );
 		
@@ -339,7 +339,7 @@ class awaiken_initialise_customizer_settings {
 		$wp_customize->add_control( 'blog_page_title', array(
 			'type' => 'text',
 			'section' => $section,
-			'label'       => esc_html__( 'Blog Page Title', 'lenity' ),
+			'label'       => esc_html__( 'Blog Page Title', 'masterwp' ),
 		) );
 		
 		//Header Background Image
@@ -353,18 +353,18 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'blog_page_header_background_image',
 			array(
-				'label' => __( 'Header Background Image', 'lenity' ),
-				'description' => esc_html__( 'Header background image for blog archive and single page.', 'lenity' ),
+				'label' => __( 'Header Background Image', 'masterwp' ),
+				'description' => esc_html__( 'Header background image for blog archive and single page.', 'masterwp' ),
 				'section' => $section,
 				'mime_type' => 'image',
 				'button_labels' => array(
-					'select' => __( 'Select File', 'lenity' ),
-					'change' => __( 'Change File', 'lenity' ),
-					'default' => __( 'Default', 'lenity' ),
-					'remove' => __( 'Remove', 'lenity' ),
-					'placeholder' => __( 'No file selected', 'lenity' ),
-					'frame_title' => __( 'Select File', 'lenity' ),
-					'frame_button' => __( 'Choose File', 'lenity' ),
+					'select' => __( 'Select File', 'masterwp' ),
+					'change' => __( 'Change File', 'masterwp' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'remove' => __( 'Remove', 'masterwp' ),
+					'placeholder' => __( 'No file selected', 'masterwp' ),
+					'frame_title' => __( 'Select File', 'masterwp' ),
+					'frame_button' => __( 'Choose File', 'masterwp' ),
 				)
 			)
 		) );
@@ -376,13 +376,13 @@ class awaiken_initialise_customizer_settings {
 		) );
 		
 		$wp_customize->add_control( 'archive_page_layout', array(
-			  'label'          => __( 'Archive Page Layout', 'lenity' ),
+			  'label'          => __( 'Archive Page Layout', 'masterwp' ),
 			  'section' => $section,
 			  'settings' => 'archive_page_layout',
 			  'type' => 'radio',
 			  'choices' => array(
-				'full-width'   => __( 'Full Width', 'lenity' ),
-				'with-sidebar'  => __( 'With Sidebar', 'lenity' )
+				'full-width'   => __( 'Full Width', 'masterwp' ),
+				'with-sidebar'  => __( 'With Sidebar', 'masterwp' )
 			  ),
 		) );
 		
@@ -393,14 +393,14 @@ class awaiken_initialise_customizer_settings {
 		) );
 		
 		$wp_customize->add_control( 'blog_single_page_layout', array(
-			  'label'          => __( 'Blog Single Layout', 'lenity' ),
-			  'description' => esc_html__( 'Works with the Default Template only.', 'lenity' ),
+			  'label'          => __( 'Blog Single Layout', 'masterwp' ),
+			  'description' => esc_html__( 'Works with the Default Template only.', 'masterwp' ),
 			  'section' => $section,
 			  'settings' => 'blog_single_page_layout',
 			  'type' => 'radio',
 			  'choices' => array(
-				'full-width'   => __( 'Full Width', 'lenity' ),
-				'with-sidebar'  => __( 'With Sidebar', 'lenity' )
+				'full-width'   => __( 'Full Width', 'masterwp' ),
+				'with-sidebar'  => __( 'With Sidebar', 'masterwp' )
 			  ),
 		) );
 		
@@ -414,24 +414,24 @@ class awaiken_initialise_customizer_settings {
 		);
 		$wp_customize->add_control( new Skyrocket_Pill_Checkbox_Custom_Control( $wp_customize, 'social_sharing',
 			array(
-				'label' => __( 'Social Sharing', 'lenity' ),
-				'description' => esc_html__( 'Choose the social network you want to display in the social share box.', 'lenity' ),
+				'label' => __( 'Social Sharing', 'masterwp' ),
+				'description' => esc_html__( 'Choose the social network you want to display in the social share box.', 'masterwp' ),
 				'section' => $section,
 				'input_attrs' => array(
 					'sortable' => true,
 					'fullwidth' => true,
 				),
 				'choices' => array(
-					'facebook' => esc_attr__( 'Facebook', 'lenity' ),
-					'twitter' => esc_attr__( 'Twitter', 'lenity' ),
-					'whatsapp' => esc_attr__( 'Whatsapp', 'lenity' ),
-					'linkedin' => esc_attr__( 'LinkedIn', 'lenity' ),
-					'reddit' => esc_attr__( 'Reddit', 'lenity' ),
-					'tumblr' => esc_attr__( 'Tumblr', 'lenity' ),
-					'pinterest' => esc_attr__( 'Pinterest', 'lenity' ),
-					'vk' => esc_attr__( 'vk', 'lenity' ),
-					'email' => esc_attr__( 'Email', 'lenity' ),
-					'telegram' => esc_attr__( 'Telegram', 'lenity' ),
+					'facebook' => esc_attr__( 'Facebook', 'masterwp' ),
+					'twitter' => esc_attr__( 'Twitter', 'masterwp' ),
+					'whatsapp' => esc_attr__( 'Whatsapp', 'masterwp' ),
+					'linkedin' => esc_attr__( 'LinkedIn', 'masterwp' ),
+					'reddit' => esc_attr__( 'Reddit', 'masterwp' ),
+					'tumblr' => esc_attr__( 'Tumblr', 'masterwp' ),
+					'pinterest' => esc_attr__( 'Pinterest', 'masterwp' ),
+					'vk' => esc_attr__( 'vk', 'masterwp' ),
+					'email' => esc_attr__( 'Email', 'masterwp' ),
+					'telegram' => esc_attr__( 'Telegram', 'masterwp' ),
 				)
 			)
 		) );
@@ -457,17 +457,17 @@ class awaiken_initialise_customizer_settings {
 		
 		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo',
 			array(
-				'label' => __( 'Footer Logo', 'lenity' ),
+				'label' => __( 'Footer Logo', 'masterwp' ),
 				'section' => $section,
 				'mime_type' => 'image',
 				'button_labels' => array(
-					'select' => __( 'Select File', 'lenity' ),
-					'change' => __( 'Change File', 'lenity' ),
-					'default' => __( 'Default', 'lenity' ),
-					'remove' => __( 'Remove', 'lenity' ),
-					'placeholder' => __( 'No file selected', 'lenity' ),
-					'frame_title' => __( 'Select File', 'lenity' ),
-					'frame_button' => __( 'Choose File', 'lenity' ),
+					'select' => __( 'Select File', 'masterwp' ),
+					'change' => __( 'Change File', 'masterwp' ),
+					'default' => __( 'Default', 'masterwp' ),
+					'remove' => __( 'Remove', 'masterwp' ),
+					'placeholder' => __( 'No file selected', 'masterwp' ),
+					'frame_title' => __( 'Select File', 'masterwp' ),
+					'frame_button' => __( 'Choose File', 'masterwp' ),
 				)
 			)
 		) );
@@ -482,7 +482,7 @@ class awaiken_initialise_customizer_settings {
 		);
 		$wp_customize->add_control( 'footer_copyright_text',
 			array(
-				'label' => __( 'Copyright Text', 'lenity' ),
+				'label' => __( 'Copyright Text', 'masterwp' ),
 				'section' => $section,
 				'type' => 'textarea',
 			)
@@ -498,11 +498,11 @@ class awaiken_initialise_customizer_settings {
 		);
 		$wp_customize->add_control( new Skyrocket_Sortable_Repeater_Custom_Control( $wp_customize, 'social_urls',
 			array(
-				'label' => __( 'Social URLs', 'lenity' ),
-				'description' => esc_html__( 'Enter the social profile URLs.', 'lenity' ),
+				'label' => __( 'Social URLs', 'masterwp' ),
+				'description' => esc_html__( 'Enter the social profile URLs.', 'masterwp' ),
 				'section' => $section,
 				'button_labels' => array(
-					'add' => __( 'Add Row', 'lenity' ),
+					'add' => __( 'Add Row', 'masterwp' ),
 				)
 			)
 		) );
@@ -514,7 +514,7 @@ class awaiken_initialise_customizer_settings {
 /**
  * Load all our Customizer Custom Controls
  */
-require_once LENITY_THEME_DIR . '/inc/customizer/custom-controls.php';
+require_once MASTERWP_THEME_DIR . '/inc/customizer/custom-controls.php';
 
 /**
  * Initialise our Customizer settings

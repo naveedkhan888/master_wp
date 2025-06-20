@@ -1,6 +1,6 @@
 <wpml-config>
   <admin-texts>
-    <key name="theme_mods_lenity">
+    <key name="theme_mods_masterwp">
       <key name="programmes_page_title"/>
       <key name="blog_page_title"/>
       <key name="footer_copyright_text"/>

@@ -7,11 +7,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
 *	Register action
 */
-add_action( 'lenity_action_get_breadcrumb', 'lenity_get_breadcrumb' );
-add_action( 'lenity_action_social_sharing', 'lenity_get_social_sharing_icons' );
+add_action( 'masterwp_action_get_breadcrumb', 'masterwp_get_breadcrumb' );
+add_action( 'masterwp_action_social_sharing', 'masterwp_get_social_sharing_icons' );
 
-function lenity_get_social_sharing_icons() {
-	$sharing_links = lenity_generate_social_share_links();
+function masterwp_get_social_sharing_icons() {
+	$sharing_links = masterwp_generate_social_share_links();
 	if($sharing_links) {
 		echo '<div class="post-social-sharing">';
 		echo wp_kses_post($sharing_links);
@@ -23,34 +23,34 @@ function lenity_get_social_sharing_icons() {
 /*
  * Add class to body
 */
-add_filter( 'body_class', 'lenity_body_class' );
-function lenity_body_class( $classes ) {
-	global $LENITY_STORAGE;
+add_filter( 'body_class', 'masterwp_body_class' );
+function masterwp_body_class( $classes ) {
+	global $MASTERWP_STORAGE;
 	
-    if( get_theme_mod( 'magic_cursor', $LENITY_STORAGE['magic_cursor'] ) ) { 
+    if( get_theme_mod( 'magic_cursor', $MASTERWP_STORAGE['magic_cursor'] ) ) { 
         $classes[] = 'tt-magic-cursor';
     }
 
-	if( !get_theme_mod( 'show_small_heading_icon', $LENITY_STORAGE['show_small_heading_icon'] ) ) { 
-        $classes[] = 'lenity-hide-small-icon';
+	if( !get_theme_mod( 'show_small_heading_icon', $MASTERWP_STORAGE['show_small_heading_icon'] ) ) { 
+        $classes[] = 'masterwp-hide-small-icon';
     }
 	
 	if( isset($_GET['elementskit_template']) && !isset($_GET['elementor-preview']) && ( in_array($_GET['elementskit_template'], array( 'header', 'header-layout-2', 'header-layout-3', 'header-layout-4') ) ) ) {
-		$classes[] = 'lenity-header-preview';
+		$classes[] = 'masterwp-header-preview';
 	}
 	
     return $classes;
 }
 
-add_action( 'wp_body_open', 'lenity_wp_body_open' );
+add_action( 'wp_body_open', 'masterwp_wp_body_open' );
 
-function lenity_wp_body_open() {
-	global $LENITY_STORAGE;
+function masterwp_wp_body_open() {
+	global $MASTERWP_STORAGE;
 
-	if( !is_admin() && get_theme_mod( 'show_preloader', $LENITY_STORAGE['show_preloader'] ) ) { 
+	if( !is_admin() && get_theme_mod( 'show_preloader', $MASTERWP_STORAGE['show_preloader'] ) ) { 
 	
-	$icon = get_theme_mod( 'preloader_icon', $LENITY_STORAGE['preloader_icon'] );
-	$preloader_icon = LENITY_THEME_URL.'/assets/images/loader.svg';
+	$icon = get_theme_mod( 'preloader_icon', $MASTERWP_STORAGE['preloader_icon'] );
+	$preloader_icon = MASTERWP_THEME_URL.'/assets/images/loader.svg';
 	if ( !empty($icon) ) { 
 		$preloader_icon = wp_get_attachment_image_src( $icon , 'full' );
 		$preloader_icon = $preloader_icon[0];
@@ -64,7 +64,7 @@ function lenity_wp_body_open() {
 	</div>
 	<?php 
 	} 
-	if( get_theme_mod( 'magic_cursor', $LENITY_STORAGE['magic_cursor'] ) ) { 
+	if( get_theme_mod( 'magic_cursor', $MASTERWP_STORAGE['magic_cursor'] ) ) { 
 	?>
 	<div id="magic-cursor">
 		<div id="ball"></div>
@@ -78,32 +78,32 @@ function lenity_wp_body_open() {
 * Add class to header menu li tag
 */
 
-function lenity_add_additional_class_on_li($classes, $item, $args) {
+function masterwp_add_additional_class_on_li($classes, $item, $args) {
 	if (property_exists($args, 'li_class')) {
         $classes[] = $args->li_class;
     }
     return $classes;
 }
-add_filter('nav_menu_css_class', 'lenity_add_additional_class_on_li', 1, 3);
+add_filter('nav_menu_css_class', 'masterwp_add_additional_class_on_li', 1, 3);
 
 /*
 * Add class to header menu li a tag
 */
 
-function lenity_add_additional_class_to_a( $atts, $item, $args ) {
+function masterwp_add_additional_class_to_a( $atts, $item, $args ) {
   if (property_exists($args, 'a_tag_class')) {
     $atts['class'] = $args->a_tag_class;
   }
   return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'lenity_add_additional_class_to_a', 1, 3 );
+add_filter( 'nav_menu_link_attributes', 'masterwp_add_additional_class_to_a', 1, 3 );
 
 
 /**
 * Menu fallback
 */
 
-function lenity_fallback( $args ) {
+function masterwp_fallback( $args ) {
 	if ( ! current_user_can( 'edit_theme_options' ) ) {
 		return;
 	}
@@ -135,7 +135,7 @@ function lenity_fallback( $args ) {
 	$class            = $args['menu_class'] ? ' class="menu-fallback-menu ' . esc_attr( $args['menu_class'] ) . '"' : ' class="menu-fallback-menu"';
 	$id               = $args['menu_id'] ? ' id="' . esc_attr( $args['menu_id'] ) . '"' : '';
 	$fallback_output .= '<ul' . $id . $class . '>';
-	$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'lenity' ) . '">' . esc_html__( 'Add a menu', 'lenity' ) . '</a></li>';
+	$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'masterwp' ) . '">' . esc_html__( 'Add a menu', 'masterwp' ) . '</a></li>';
 	$fallback_output .= '</ul>';
 
 	// Menu container closing tag.
@@ -157,46 +157,46 @@ function lenity_fallback( $args ) {
  * Archive page title
  */
 
-if ( ! function_exists( 'lenity_get_archive_title' ) ) {
-	function lenity_get_archive_title() {
+if ( ! function_exists( 'masterwp_get_archive_title' ) ) {
+	function masterwp_get_archive_title() {
 
 		if ( is_front_page() ) {
-			$title = esc_html__( 'Home', 'lenity' );
+			$title = esc_html__( 'Home', 'masterwp' );
 		} elseif ( is_home() ) {
 			$title = get_theme_mod( 'blog_page_title' );
 			if(empty($title)) {
-				$title = esc_html__( 'Blog', 'lenity' );
+				$title = esc_html__( 'Blog', 'masterwp' );
 			}
 		} elseif ( is_author() ) {
 			$curauth = ( get_query_var( 'author_name' ) ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) );
 			// Translators: Add the author's name to the title
-			$title = sprintf( esc_html__( 'Author: %s', 'lenity' ), $curauth->display_name );
+			$title = sprintf( esc_html__( 'Author: %s', 'masterwp' ), $curauth->display_name );
 		} elseif ( is_404() ) {
-			$title = esc_html__( 'URL not found', 'lenity' );
+			$title = esc_html__( 'URL not found', 'masterwp' );
 		} elseif ( is_search() ) {
 			// Translators: Add the author's name to the title
-			$title = sprintf( esc_html__( 'Search: %s', 'lenity' ), get_search_query() );
+			$title = sprintf( esc_html__( 'Search: %s', 'masterwp' ), get_search_query() );
 		} elseif ( is_day() ) {
 			// Translators: Add the queried date to the title
-			$title = sprintf( esc_html__( 'Daily Archives: %s', 'lenity' ), get_the_date() );
+			$title = sprintf( esc_html__( 'Daily Archives: %s', 'masterwp' ), get_the_date() );
 		} elseif ( is_month() ) {
 			// Translators: Add the queried month to the title
-			$title = sprintf( esc_html__( 'Monthly Archives: %s', 'lenity' ), get_the_date( 'F Y' ) );
+			$title = sprintf( esc_html__( 'Monthly Archives: %s', 'masterwp' ), get_the_date( 'F Y' ) );
 		} elseif ( is_year() ) {
 			// Translators: Add the queried year to the title
-			$title = sprintf( esc_html__( 'Yearly Archives: %s', 'lenity' ), get_the_date( 'Y' ) );
+			$title = sprintf( esc_html__( 'Yearly Archives: %s', 'masterwp' ), get_the_date( 'Y' ) );
 		} elseif ( is_category() ) {
 			$title = single_cat_title( '', false );
 		} elseif ( is_tag() ) {
 			// Translators: Add the tag's name to the title
-			$title = sprintf( esc_html__( 'Tag: %s', 'lenity' ), single_tag_title( '', false ) );
+			$title = sprintf( esc_html__( 'Tag: %s', 'masterwp' ), single_tag_title( '', false ) );
 		} elseif ( is_tax() ) {
 			$title = single_term_title( '', false );
 		}		
 		elseif ( is_post_type_archive('awaiken-programmes') ) {
 			$title = get_theme_mod( 'programmes_page_title' );
 			if(empty($title)) {
-				$title = esc_html__( 'Our Programmes', 'lenity' );
+				$title = esc_html__( 'Our Programmes', 'masterwp' );
 			}
 		}
 		elseif ( is_post_type_archive() ) {
@@ -204,21 +204,21 @@ if ( ! function_exists( 'lenity_get_archive_title' ) ) {
 			$title = ! empty( $obj->labels->all_items ) ? $obj->labels->all_items : '';
 		} elseif ( is_attachment() ) {
 			// Translators: Add the attachment's name to the title
-			$title = sprintf( esc_html__( 'Attachment: %s', 'lenity' ), get_the_title() );
+			$title = sprintf( esc_html__( 'Attachment: %s', 'masterwp' ), get_the_title() );
 		} elseif ( is_single() || is_page() ) {
 			$title = get_the_title();
 		} else {
 			$title = get_the_title();
 		}
-		return apply_filters( 'lenity_filter_get_archive_title', $title );
+		return apply_filters( 'masterwp_filter_get_archive_title', $title );
 	}
 }
 
 /**
  * Set our Social Icons URLs.
  */
-if ( ! function_exists( 'lenity_social_icons_list' ) ) {
-	function lenity_social_icons_list() {
+if ( ! function_exists( 'masterwp_social_icons_list' ) ) {
+	function masterwp_social_icons_list() {
 
 		$social_icons = array(
 			array( 'url' => '500px.com', 'icon' => 'fab fa-500px', 'class' => 'fivehundredpx' ),
@@ -266,7 +266,7 @@ if ( ! function_exists( 'lenity_social_icons_list' ) ) {
 			array( 'url' => 'youtube.com', 'icon' => 'fab fa-youtube', 'class' => 'youtube' ),
 		);
 
-		return apply_filters( 'lenity_social_icons', $social_icons );
+		return apply_filters( 'masterwp_social_icons', $social_icons );
 	}
 }
 
@@ -274,12 +274,12 @@ if ( ! function_exists( 'lenity_social_icons_list' ) ) {
  * Get social media icons
  */
  
-if ( ! function_exists( 'lenity_get_social_media' ) ) {
-	function lenity_get_social_media() {
-		global $LENITY_STORAGE;
+if ( ! function_exists( 'masterwp_get_social_media' ) ) {
+	function masterwp_get_social_media() {
+		global $MASTERWP_STORAGE;
 		$output = array();
-		$social_icons = lenity_social_icons_list();
-		$social_urls = explode( ',', get_theme_mod( 'social_urls', $LENITY_STORAGE['social_urls'] ) );
+		$social_icons = masterwp_social_icons_list();
+		$social_urls = explode( ',', get_theme_mod( 'social_urls', $MASTERWP_STORAGE['social_urls'] ) );
 
 		foreach( $social_urls as $key => $value ) {
 			if ( !empty( $value ) ) {
@@ -303,7 +303,7 @@ if ( ! function_exists( 'lenity_get_social_media' ) ) {
 
 
 		if ( !empty( $output ) ) {
-			$output = apply_filters( 'lenity_social_profile_list', $output );
+			$output = apply_filters( 'masterwp_social_profile_list', $output );
 			array_unshift( $output, '<ul class="social-icons">' );
 			$output[] = '</ul>';
 		}
@@ -315,11 +315,11 @@ if ( ! function_exists( 'lenity_get_social_media' ) ) {
 /**
  * Social share links
  */
-if ( ! function_exists( 'lenity_generate_social_share_links' ) ) {
-	function lenity_generate_social_share_links() {
+if ( ! function_exists( 'masterwp_generate_social_share_links' ) ) {
+	function masterwp_generate_social_share_links() {
 		
-		global $LENITY_STORAGE;
-		$social_sharing_links = explode( ',', get_theme_mod( 'social_sharing', $LENITY_STORAGE['social_sharing'] ) );
+		global $MASTERWP_STORAGE;
+		$social_sharing_links = explode( ',', get_theme_mod( 'social_sharing', $MASTERWP_STORAGE['social_sharing'] ) );
 		
 		$output = array();
 		$social_links_array = array();
@@ -420,21 +420,21 @@ add_action( 'admin_init', function() {
 	}
 }, 1 );
 
-if ( ! function_exists( 'lenity_custom_excerpt_length' ) ) {
-	function lenity_custom_excerpt_length( $length ) {
-		return apply_filters( 'lenity_excerpt_length', 9 );
+if ( ! function_exists( 'masterwp_custom_excerpt_length' ) ) {
+	function masterwp_custom_excerpt_length( $length ) {
+		return apply_filters( 'masterwp_excerpt_length', 9 );
 	}
 }
 
-add_filter( 'excerpt_length', 'lenity_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'masterwp_custom_excerpt_length', 999 );
 
 
-if ( ! function_exists( 'lenity_wp_footer' ) ) {
-	function lenity_wp_footer() {
-		global $LENITY_STORAGE;
+if ( ! function_exists( 'masterwp_wp_footer' ) ) {
+	function masterwp_wp_footer() {
+		global $MASTERWP_STORAGE;
 		$css_rules = [];
 
-		$small_heading_icon =  get_theme_mod( 'small_heading_icon', $LENITY_STORAGE['small_heading_icon'] );
+		$small_heading_icon =  get_theme_mod( 'small_heading_icon', $MASTERWP_STORAGE['small_heading_icon'] );
 		if( $small_heading_icon ) { 
 			$background_image 	= 	wp_get_attachment_image_src( $small_heading_icon , 'full' );
 			if(isset($background_image[0])) {
@@ -482,18 +482,18 @@ if ( ! function_exists( 'lenity_wp_footer' ) ) {
 		}
 	}
 }
-add_action( 'wp_footer', 'lenity_wp_footer' );
+add_action( 'wp_footer', 'masterwp_wp_footer' );
 
 
 
-if ( ! function_exists( 'lenity_render_image_tag' ) ) {
-    function lenity_render_icon_tag( $file ) {
+if ( ! function_exists( 'masterwp_render_image_tag' ) ) {
+    function masterwp_render_icon_tag( $file ) {
         return '<i class="fa-solid fa-arrow-right"></i>';
     }
 }
 
-if ( ! function_exists( 'lenity_render_svg' ) ) {
-    function lenity_render_svg( $file ) {
+if ( ! function_exists( 'masterwp_render_svg' ) ) {
+    function masterwp_render_svg( $file ) {
         $valid_svg = false;
 
         // Check if the file exists
@@ -513,7 +513,7 @@ if ( ! function_exists( 'lenity_render_svg' ) ) {
 
         // If SVG is invalid, fallback to rendering as an image tag
         if ( false === $valid_svg ) {
-            $valid_svg = lenity_render_icon_tag( $file );
+            $valid_svg = masterwp_render_icon_tag( $file );
         }
 
         return $valid_svg;

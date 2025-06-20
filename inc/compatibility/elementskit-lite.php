@@ -46,16 +46,16 @@ class Awaiken_ElementsKit_Lite {
 
 		add_submenu_page(
 			'themes.php',
-			__( 'Headers', 'lenity' ),
-			__( 'Headers', 'lenity' ),
+			__( 'Headers', 'masterwp' ),
+			__( 'Headers', 'masterwp' ),
 			'manage_options',
 			'edit.php?post_type=elementskit_template&elementskit_type_filter=header',
 		);
 		
 		add_submenu_page(
 			'themes.php',
-			__( 'Footers', 'lenity' ),
-			__( 'Footers', 'lenity' ),
+			__( 'Footers', 'masterwp' ),
+			__( 'Footers', 'masterwp' ),
 			'manage_options',
 			'edit.php?post_type=elementskit_template&elementskit_type_filter=footer',
 		);
@@ -227,7 +227,7 @@ class Awaiken_ElementsKit_Lite {
 	
 	public function admin_head_script() { 
 	
-		$license_menu 	= 	apply_filters( 'lenity_theme_enable_elementskit_license_menu', false );
+		$license_menu 	= 	apply_filters( 'masterwp_theme_enable_elementskit_license_menu', false );
 		$styles			=	array();
 		if (!class_exists('Gutenkit')) {
 			$styles[] = 'button.components-button.gutenkit-template-library-btn { display:none;	}';
