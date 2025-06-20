@@ -3385,6 +3385,25 @@ body.admin-bar .main-header.ekit-sticky--effects{
   left: 0;
 }
 
+
+.how-work-step .elementskit-infobox.image-active::before{
+	opacity: 50%;
+	transition: all 0.4s ease-in-out;
+}
+
+.how-work-step .elementskit-box-header svg,
+.how-work-step .elementskit-info-box-title{
+	transition: all 0.3s ease-in-out;
+}
+
+.how-work-step:hover .ekit-icon-box-badge span{
+	color: var(--e-global-color-white) !important;
+}
+
+.how-work-step .ekit-icon-box-badge span{
+	transition: all 0.5s ease-in-out;
+}
+
 @media only screen and (max-width: 1024px){
 	
 	body.admin-bar .main-header.ekit-sticky--effects{
