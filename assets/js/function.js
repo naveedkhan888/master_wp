@@ -781,5 +781,27 @@
 	}
 	/*Service Entry Step Item Active End  */
 
+
+    /* Hero Benefits Box Start */
+    var $hero_benefits_box = $('.hero-benefits-box');
+    if ($hero_benefits_box.length) {
+        var $hero_benefit_item = $hero_benefits_box.find('.hero-benefit-item');
+
+        if ($hero_benefit_item.length) {
+            $hero_benefit_item.on({
+                mouseenter: function () {
+                    if (!$(this).hasClass('active')) {
+                        $hero_benefit_item.removeClass('active'); 
+                        $(this).addClass('active'); 
+                    }
+                },
+                mouseleave: function () {
+                    // Optional: Add logic for mouse leave if needed
+                }
+            });
+        }
+    }
+    /* Hero Benefits Box End */
+
 	
 })(jQuery);

@@ -3365,6 +3365,26 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	margin-left: 0 !important;
 }
 
+
+.hero-benefit-item:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: auto;
+  right: 0;
+  background: var(--e-global-color-accent);
+  border-radius: 100px;
+  width: 0;
+  height: 4px;
+  transition: all 0.4s ease-in-out;
+}
+.hero-benefit-item:hover::before, .hero-benefit-item.active::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
 @media only screen and (max-width: 1024px){
 	
 	body.admin-bar .main-header.ekit-sticky--effects{
