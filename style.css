@@ -4363,6 +4363,10 @@ body.admin-bar .main-header.ekit-sticky--effects{
   opacity: 0;
 }
 
+.service-item {
+  overflow: hidden !important;
+}
+
 @media only screen and (max-width: 1820px){
 	 .curvexp-section {
     	width: calc(100% - 100px);
