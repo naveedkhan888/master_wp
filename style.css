@@ -4332,6 +4332,11 @@ body.admin-bar .main-header.ekit-sticky--effects{
   background-color: var(--e-global-color-primary) !important;
 }
 
+.about-trusted-booking .elementskit-info-box-icon svg, .service-item .elementskit-info-box-icon svg {
+  position: relative;
+  z-index: 1;
+}
+
 @media only screen and (max-width: 1820px){
 	 .curvexp-section {
     	width: calc(100% - 100px);
