@@ -4300,6 +4300,38 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	stroke: none !important;
 }
 
+.about-trusted-booking .elementskit-info-box-icon::before, 
+.service-item .elementskit-info-box-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--e-global-color-accent);
+  opacity: 10%;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  z-index: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.about-trusted-booking:hover .elementskit-info-box-icon::before {
+  opacity: 70%;
+}
+
+.service-item:hover .elementskit-info-box-icon::before {
+  background-color: var(--e-global-color-white);
+  opacity: 100%;
+}
+
+.service-item:hover .btn-wraper svg {
+  transform: rotate(45deg);
+}
+
+.service-item:hover .btn-wraper a {
+  background-color: var(--e-global-color-primary) !important;
+}
+
 @media only screen and (max-width: 1820px){
 	 .curvexp-section {
     	width: calc(100% - 100px);
