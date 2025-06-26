@@ -4300,6 +4300,12 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	stroke: none !important;
 }
 
+@media only screen and (max-width: 1820px){
+	 .curvexp-section {
+    	width: calc(100% - 100px);
+    	margin: 0 50px; }
+}
+
 @media only screen and (max-width: 991px){
 	
 	.need-fund-box svg{
