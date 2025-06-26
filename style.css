@@ -4337,6 +4337,32 @@ body.admin-bar .main-header.ekit-sticky--effects{
   z-index: 1;
 }
 
+.service-item .btn-wraper svg {
+  transition: all 0.5s ease-in-out;
+}
+
+
+.service-item:hover::before {
+  top: 0;
+  border-radius: 0;
+  opacity: 1;
+}
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--e-global-color-accent);
+  border-radius: 500px 500px 0 0;
+  transition: all 0.4s ease-in-out;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0;
+}
+
 @media only screen and (max-width: 1820px){
 	 .curvexp-section {
     	width: calc(100% - 100px);
