@@ -145,6 +145,11 @@ class Awaiken_Elementor {
 						'title' => 'New Second Color',
 						'color' => '',
 					 ),
+					 10 => array(
+						'_id' => 'bglightnew',
+						'title' => 'Bg Light Color',
+						'color' => '',
+					 ),
 				),
 			] );
 
