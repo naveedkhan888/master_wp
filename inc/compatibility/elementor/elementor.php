@@ -140,6 +140,11 @@ class Awaiken_Elementor {
 						'title' => 'Dark Divider Color',
 						'color' => '',
 					 ),
+					 9 => array(
+						'_id' => 'hoverbtn',
+						'title' => 'Button Hover Color',
+						'color' => '',
+					 ),
 				),
 			] );
 
