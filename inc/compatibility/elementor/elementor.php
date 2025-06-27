@@ -141,8 +141,8 @@ class Awaiken_Elementor {
 						'color' => '',
 					 ),
 					 9 => array(
-						'_id' => 'hoverbtn',
-						'title' => 'Button Hover Color',
+						'_id' => 'secondclr',
+						'title' => 'Second Color',
 						'color' => '',
 					 ),
 				),
