@@ -3691,7 +3691,7 @@ body.admin-bar .main-header.ekit-sticky--effects{
 }
 
 .video-play-button:hover .elementor-widget-container .ekit-video-popup-btn i{
-	background: var(--e-global-color-black);	
+	background: var(--e-global-color-secondclr);	
 }
 
 .about-img-1 img{
