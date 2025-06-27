@@ -141,7 +141,7 @@ class Awaiken_Elementor {
 						'color' => '',
 					 ),
 					 9 => array(
-						'_id' => 'secondclr',
+						'_id' => 'secondclrs',
 						'title' => 'Second Color',
 						'color' => '',
 					 ),
