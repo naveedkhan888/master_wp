@@ -4321,7 +4321,10 @@ body.admin-bar .main-header.ekit-sticky--effects{
 
 .service-item:hover .elementskit-info-box-icon::before {
   background-color: var(--e-global-color-white);
-  opacity: 100%;
+  opacity: 10%;
+}
+.service-item:hover .elementskit-info-box-icon svg {
+  filter: invert(100%) sepia(0%) saturate(7465%) hue-rotate(1deg) brightness(116%) contrast(96%);
 }
 
 .service-item:hover .btn-wraper svg {
@@ -4375,6 +4378,13 @@ body.admin-bar .main-header.ekit-sticky--effects{
 .blurred_bg {
 	-webkit-backdrop-filter: saturate(180%) blur(40px);
   backdrop-filter: saturate(180%) blur(40px);
+}
+
+.elementskit-navbar-nav-default .elementskit-submenu-panel > li:last-child a {
+  border-radius: 0 0 15px 15px;
+}
+.elementskit-navbar-nav-default .elementskit-submenu-panel > li:first-child a {
+  border-radius: 15px 15px 0 0;
 }
 
 @media only screen and (max-width: 1820px){
