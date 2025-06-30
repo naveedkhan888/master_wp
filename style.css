@@ -4067,6 +4067,11 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	animation: customerreviewobject 3s infinite linear alternate;
 }
 
+.animation_item_xper {
+	overflow: hidden;
+	animation: customerreviewobject 3s infinite linear alternate;
+}
+
 @keyframes customerreviewobject{
 	50%{
 		right: 65px;
