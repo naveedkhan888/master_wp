@@ -4369,8 +4369,8 @@ body.admin-bar .main-header.ekit-sticky--effects{
 
 @media only screen and (max-width: 1820px){
 	 .curvexp-section {
-    	width: calc(100% - 100px);
-    	margin: 0 50px; }
+    	width: calc(100% - 40px);
+    	margin: 0 20px; }
 }
 
 @media only screen and (max-width: 991px){
