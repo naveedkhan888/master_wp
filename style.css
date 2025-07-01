@@ -4006,7 +4006,11 @@ body.admin-bar .main-header.ekit-sticky--effects{
 }
 
 .our-feature-image img{
-	aspect-ratio: 1 / 0.831;
+	aspect-ratio: 1 / 2.033;
+	object-fit: cover;
+}
+.our-feature-image-small img{
+	aspect-ratio: 1 / 0.9886;
 	object-fit: cover;
 }
 
