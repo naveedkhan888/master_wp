@@ -4293,6 +4293,7 @@ body.admin-bar .main-header.ekit-sticky--effects{
 .latest-news .elementskit-post-image-card .btn-wraper svg{
 	background: var(--e-global-color-accent);
 	color: var(--e-global-color-white);
+	fill: var(--e-global-color-white);
 	padding: 7px;
 	border-radius: 100px;
 	height: 30px;
@@ -4515,8 +4516,8 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	}
 	
     .latest-news .elementskit-post-image-card .btn-wraper{
-        bottom: 30px;
-        left: 30px;
+        bottom: 40px;
+        left: 40px;
     }
 	
 }
