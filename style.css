@@ -4009,6 +4009,9 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	aspect-ratio: 1 / 2.033;
 	object-fit: cover;
 }
+.our-feature-image, .our-feature-image-small {
+  height: 100%;
+}
 .our-feature-image-small img{
 	aspect-ratio: 1 / 0.9886;
 	object-fit: cover;
