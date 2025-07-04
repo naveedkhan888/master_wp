@@ -875,7 +875,7 @@ header.main-header .header-sticky.active{
 	position: relative;
 	z-index: 1;
 	background: #FFFFFFC7;
-	display: block;
+	display: inline-block;
   padding: 40px;
   -webkit-backdrop-filter: saturate(180%) blur(40px);
   backdrop-filter: saturate(180%) blur(40px);
