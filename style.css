@@ -851,10 +851,10 @@ header.main-header .header-sticky.active{
 .page-header{
 	position: relative;
 	background: var(--e-global-color-primary);
-    background-position: center center;
+    background-position: bottom center;
 	background-repeat: no-repeat;
     background-size: cover;
-    padding: 235px 0 135px;
+    padding: 135px 0 135px;
 }
 
 .page-header::before {
@@ -868,6 +868,7 @@ header.main-header .header-sticky.active{
     height: 100%;
     width: 100%;
     z-index: 1;
+    display: none;
 }
 
 .page-header-box{
