@@ -1220,7 +1220,7 @@ footer.footer{
 .post-single-meta ul li{
 	display: inline-block;
 	margin-right: 15px;
-	color: var(--e-global-color-white);
+	color: var( --e-global-color-primary );
 }
 
 .post-single-meta ul li:last-child{
