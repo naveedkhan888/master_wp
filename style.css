@@ -3391,6 +3391,10 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	transition: all 0.4s ease-in-out;
 }
 
+.how-work-step .image-hover > img {
+  object-fit: cover;
+}
+
 .how-work-step .elementskit-box-header svg,
 .how-work-step .elementskit-info-box-title{
 	transition: all 0.3s ease-in-out;
