@@ -1430,7 +1430,7 @@ footer.footer{
 }
 
 .post-tags .tag-links a:hover{
-	background-color: var(--e-global-color-primary);
+	background-color: var(--e-global-color-accentsecondary);
 }
 
 .post-social-sharing{
@@ -1466,7 +1466,7 @@ footer.footer{
 }
 
 .post-social-sharing ul li a:hover{
-    background-color: var(--e-global-color-primary);
+    background-color: var(--e-global-color-accentsecondary);
 	color: var(--e-global-color-white);
 }
 
@@ -2733,7 +2733,7 @@ aside.widget .wp-block-social-links{
 }
 
 .comment-form .form-submit .submit:hover{
-	background:var(--e-global-color-primary);
+	background:var(--e-global-color-accentsecondary);
 }
 
 .comment-list{
@@ -3664,23 +3664,10 @@ body.admin-bar .main-header.ekit-sticky--effects{
 }
 
 /* Home Page CSS  */
-
-.hero-bg{
-	position: relative;
+.ekit-wid-con .elementor-inline-items .elementor-icon-list-item {
+	display: flex;
 }
 
-.hero-bg:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	height: 100%;
-	width: 100%;
-	background: linear-gradient(270deg, rgba(2, 13, 25, 0) 16.33%, rgba(2, 13, 25, 0.8) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, var(--e-global-color-primary) 101.14%);
-	z-index: 0;
-}
 
 .video-play-button .elementor-widget-container .ekit-video-popup-btn{
 	display: flex;
@@ -3971,7 +3958,7 @@ body.admin-bar .main-header.ekit-sticky--effects{
     right: 0;
     width: 0;
     height: 100%;
-    background: var(--e-global-color-primary);
+    background: var(--e-global-color-accentsecondary);
     border-radius: 100px;
     transition: all 0.4sease-in-out;
     z-index: -1;
@@ -4536,9 +4523,6 @@ body.admin-bar .main-header.ekit-sticky--effects{
 
 @media only screen and (max-width: 767px){
 	
-	.hero-bg:before{
-		background: linear-gradient(270deg, rgba(2, 13, 25, 0.3) 16.33%, rgba(2, 13, 25, 0.8) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, #020D19 101.14%);
-	}
 
 	.video-play-button .elementor-widget-container .ekit-video-popup-btn i{
 		height: 45px;
@@ -4585,21 +4569,6 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	}
 }
 
-/* Hero Video CSS */
-
-.hero-bg .elementor-background-video-container:after{
-	content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(270deg, rgba(2, 13, 25, 0) 16.33%, rgba(2, 13, 25, 0.8) 100%), linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, var(--e-global-color-primary) 101.14%);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
 
 /* Hero Slider CSS */
 
