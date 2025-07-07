@@ -3345,7 +3345,7 @@ body.admin-bar .main-header.ekit-sticky--effects{
 .masterwp-header-preview .header-version-2,
 .masterwp-header-preview .header-version-3,
 .masterwp-header-preview .header-version-4{
-	background-color: var(--e-global-color-primary) !important;
+	background-color: var(--e-global-color-accentsecondary) !important;
 }
 
 .header-contact-btn .elementskit-info-box-icon{
