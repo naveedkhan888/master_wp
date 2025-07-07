@@ -3767,7 +3767,7 @@ body.admin-bar .main-header.ekit-sticky--effects{
     width: 100%;
     background-color: var(--e-global-color-secondary);
     display: inline-block;
-    mask-image: url("assets/images/helped-fund-box-mask.svg");
+    mask-image: url("assets/images/box-mask.svg");
     mask-size: contain;
     mask-position: bottom center;
     mask-repeat: no-repeat;
