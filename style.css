@@ -4324,10 +4324,9 @@ body.admin-bar .main-header.ekit-sticky--effects{
 }
 
 .latest-news .elementskit-post-image-card .btn-wraper svg{
-	background: var(--e-global-color-accent);
-	color: var(--e-global-color-white);
-	fill: var(--e-global-color-white);
-	padding: 7px;
+	color: var(--e-global-color-accent);
+	fill: var(--e-global-color-accent);
+	padding: 4px;
 	border-radius: 100px;
 	height: 30px;
 	width: 30px;
@@ -4337,13 +4336,9 @@ body.admin-bar .main-header.ekit-sticky--effects{
 }
 
 .latest-news .btn-wraper:hover svg{
-	background-color: var(--e-global-color-primary);
 	transform: translateX(10%);
 }
 
-.latest-news .btn-wraper:hover a{
-	color: var(--e-global-color-primary) !important;
-}
 
 .latest-news .btn-wraper .elementskit-btn:hover svg path{
 	stroke: none !important;
