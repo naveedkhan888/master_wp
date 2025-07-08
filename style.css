@@ -3486,6 +3486,26 @@ body.admin-bar .main-header.ekit-sticky--effects{
 	padding-bottom: 0px !important;
 }
 
+ .footer-links .ekit-menu-nav-link {
+    position: relative;
+    display: inline-block;
+  }
+
+ .footer-links .ekit-menu-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #01702c;
+    transition: width 0.3s ease-out;
+  }
+
+ .footer-links .ekit-menu-nav-link:hover::after {
+    width: 100%;
+  }
+
 .footer-contact-item .elementskit-infobox .box-body p:hover{
 	color: var(--e-global-color-accent) !important;
 }
