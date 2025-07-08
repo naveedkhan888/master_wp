@@ -3495,10 +3495,10 @@ body.admin-bar .main-header.ekit-sticky--effects{
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
-    height: 2px;
+    top: 23px;
+    height: 1px;
     width: 0;
-    background-color: #01702c;
+    background-color: var( --e-global-color-accent );
     transition: width 0.3s ease-out;
   }
 
