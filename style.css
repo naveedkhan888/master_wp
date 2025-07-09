@@ -4372,7 +4372,7 @@ body.admin-bar .main-header.ekit-sticky--effects{
 }
 
 .service-item:hover .btn-wraper svg {
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 
 .service-item:hover .btn-wraper a {
