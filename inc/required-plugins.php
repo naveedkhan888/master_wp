@@ -199,16 +199,6 @@ function masterwp_register_required_plugins() {
 			'required'  		=> true,
 		),
 		array(
-			'name'     			=> esc_html__('GiveWP – Donation', 'masterwp'),
-			'slug'      		=> 'give',
-			'required'  		=> true,
-		),
-		array(
-			'name'     			=> esc_html__('GiveWP Donation Widgets for Elementor', 'masterwp'),
-			'slug'      		=> 'givewp-donation-widgets-for-elementor',
-			'required'  		=> true,
-		),
-		array(
 			'name'     			=> esc_html__('One Click Demo Import', 'masterwp') ,
 			'slug'      		=> 'one-click-demo-import',
 			'required'  		=> false,
