@@ -81,7 +81,7 @@ class masterwp_widget_site_Logo extends Widget_Base {
 	}
 
 	public function get_keywords() {
-		return array( 'awaiken', 'Site Logo', 'Logo' );
+		return array( 'xpertpoint', 'Site Logo', 'Logo' );
 	}
 
 	/**

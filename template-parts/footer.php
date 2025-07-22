@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php if( get_theme_mod('footer_copyright_text','') ) { ?>
 							<p><?php echo wp_kses_post( get_theme_mod('footer_copyright_text') ); ?></p>
 						<?php } else { ?>
-							<p><?php esc_html_e( 'Created by Awaiken, Powered by WordPress. All rights reserved', 'masterwp' ); ?></p>
+							<p><?php esc_html_e( 'Created by Xpertpoint, Powered by WordPress. All rights reserved', 'masterwp' ); ?></p>
 						<?php } ?>
 					</div>
 				</div>

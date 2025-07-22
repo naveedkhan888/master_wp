@@ -6,7 +6,7 @@
  * @version 1.2.0
  */
 
-class AWAIKEN_Theme_Updater {
+class XPERTPOINT_Theme_Updater {
 
 	private $remote_api_url;
 	private $request_data;

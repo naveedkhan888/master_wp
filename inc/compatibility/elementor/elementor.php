@@ -1,6 +1,6 @@
 <?php 
 
-namespace Awaiken\Compatibility;
+namespace Xpertpoint\Compatibility;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -10,7 +10,7 @@ if( !defined( 'ELEMENTOR_VERSION' ) ) {
 	return;
 }
 
-class Awaiken_Elementor { 
+class Xpertpoint_Elementor { 
 	private static $instance;
 
 	public static function instance() {
@@ -149,4 +149,4 @@ class Awaiken_Elementor {
 	}
 			
 }
-Awaiken_Elementor::instance();
+Xpertpoint_Elementor::instance();

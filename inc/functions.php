@@ -193,7 +193,7 @@ if ( ! function_exists( 'masterwp_get_archive_title' ) ) {
 		} elseif ( is_tax() ) {
 			$title = single_term_title( '', false );
 		}		
-		elseif ( is_post_type_archive('awaiken-programmes') ) {
+		elseif ( is_post_type_archive('xpertpoint-programmes') ) {
 			$title = get_theme_mod( 'programmes_page_title' );
 			if(empty($title)) {
 				$title = esc_html__( 'Our Programmes', 'masterwp' );

@@ -5,7 +5,7 @@
  * @package EDD Sample Theme
  */
 
-class AWAIKEN_Theme_Updater_Admin {
+class XPERTPOINT_Theme_Updater_Admin {
 
 	/**
 	 * Variables required for the theme updater
@@ -86,7 +86,7 @@ class AWAIKEN_Theme_Updater_Admin {
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 		add_action('admin_init', array( $this, 'admin_notices_dismissed' ) );
 
-		if(AWAIKEN_MP == 'AT') {
+		if(XPERTPOINT_MP == 'AT') {
 			//add_action( 'update_option_' . $this->theme_slug . '_license_key', array( $this, 'activate_license' ), 10, 2 );
 		}
 		add_filter( 'http_request_args', array( $this, 'disable_wporg_request' ), 5, 2 );
@@ -111,12 +111,12 @@ class AWAIKEN_Theme_Updater_Admin {
 			return;
 		}
 
-		if ( ! class_exists( 'AWAIKEN_Theme_Updater' ) ) {
+		if ( ! class_exists( 'XPERTPOINT_Theme_Updater' ) ) {
 			// Load our custom theme updater
 			include dirname( __FILE__ ) . '/theme-updater-class.php';
 		}
 
-		new AWAIKEN_Theme_Updater(
+		new XPERTPOINT_Theme_Updater(
 			array(
 				'remote_api_url' => $this->remote_api_url,
 				'version'        => $this->version,
@@ -248,7 +248,7 @@ class AWAIKEN_Theme_Updater_Admin {
 
 		// Checks license status to display under license key
 		if ( ! $license ) {
-			if(AWAIKEN_MP == 'TF') {
+			if(XPERTPOINT_MP == 'TF') {
 				$message = sprintf( $strings['enter-key-tf'], 'https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code' );
 			}
 			else{
@@ -362,7 +362,7 @@ class AWAIKEN_Theme_Updater_Admin {
 	 */
 	public function get_api_response( $api_params ) {
 		
-		if(AWAIKEN_MP == 'TF') { 
+		if(XPERTPOINT_MP == 'TF') { 
 			$url	=	$this->tf_pc_val_api_url;
 			
 		}
@@ -371,7 +371,7 @@ class AWAIKEN_Theme_Updater_Admin {
 		}
 
 		// Call the custom API.
-		$verify_ssl = (bool) apply_filters( 'awaiken_sl_api_request_verify_ssl', true );
+		$verify_ssl = (bool) apply_filters( 'xpertpoint_sl_api_request_verify_ssl', true );
 		$response   = wp_remote_post(
 			$url,
 			array(
@@ -627,7 +627,7 @@ class AWAIKEN_Theme_Updater_Admin {
 		$status  = get_option( $this->theme_slug . '_license_key_status', false );
 		$strings = $this->strings;
 		
-		if(AWAIKEN_MP == 'TF' && $status !== 'valid' ) { //
+		if(XPERTPOINT_MP == 'TF' && $status !== 'valid' ) { //
 			$api_params = array(
 				'at_action'  => 'validate_license',
 				'purchase_code'     => $license,

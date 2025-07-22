@@ -145,7 +145,7 @@ msgid "Available version:"
 msgstr ""
 
 #. Author of the theme
-msgid "Awaiken"
+msgid "Xpertpoint"
 msgstr ""
 
 #: template-parts/404.php:49
@@ -282,7 +282,7 @@ msgid "Copyright Text"
 msgstr ""
 
 #: template-parts/footer.php:60
-msgid "Created by Awaiken, Powered by WordPress. All rights reserved"
+msgid "Created by Xpertpoint, Powered by WordPress. All rights reserved"
 msgstr ""
 
 #: inc/compatibility/elementor/widgets/site-logo.php:193
@@ -509,7 +509,7 @@ msgid "https://1.envato.market/masterwp-wp"
 msgstr ""
 
 #. Author URI of the theme
-msgid "https://awaikenthemes.com/"
+msgid "https://xpertpoin8.com/"
 msgstr ""
 
 #: inc/compatibility/elementor/widgets/site-logo.php:230

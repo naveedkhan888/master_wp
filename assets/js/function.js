@@ -697,16 +697,16 @@
 		});		
 	}
 	
-	/* Awaiken Programmes */
+	/* Xpertpoint Programmes */
 	$( function() {
-		var $portfolio = $('#awaiken-portfolio');
+		var $portfolio = $('#xpertpoint-portfolio');
 		if( $portfolio.length ) {
-			var $grid = $portfolio.find('.awaiken-portfolio-grid');
-			var $portfolio_filter = $portfolio.find('.awaiken-portfolio-grid__filters');
+			var $grid = $portfolio.find('.xpertpoint-portfolio-grid');
+			var $portfolio_filter = $portfolio.find('.xpertpoint-portfolio-grid__filters');
 
 			$grid.imagesLoaded( function() {
 				$grid.isotope({
-					itemSelector: '.awaiken-portfolio-grid-item',
+					itemSelector: '.xpertpoint-portfolio-grid-item',
 					masonry: {
 						gutter: 30
 					}
@@ -725,18 +725,18 @@
 	});
 	
 	var programmes_grid = function ($scope, $) {
-		var programmes_grid_options = $scope.find(".awaiken-programmes-widget").data("config");
+		var programmes_grid_options = $scope.find(".xpertpoint-programmes-widget").data("config");
 
 		if (programmes_grid_options && programmes_grid_options.show_filter_bar === "yes") {
-			var $portfolio = $("#awaiken-portfolio-" + programmes_grid_options.id);
-			var $grid = $portfolio.find(".awaiken-portfolio-grid");
-			var $portfolio_filter = $portfolio.find(".awaiken-portfolio-grid__filters");
+			var $portfolio = $("#xpertpoint-portfolio-" + programmes_grid_options.id);
+			var $grid = $portfolio.find(".xpertpoint-portfolio-grid");
+			var $portfolio_filter = $portfolio.find(".xpertpoint-portfolio-grid__filters");
 
 			// Ensure the grid and images exist before initializing
 			if ($grid.length && $grid.find("img").length) {
 				$grid.imagesLoaded(function () {
 					$grid.isotope({
-						itemSelector: ".awaiken-portfolio-grid-item",
+						itemSelector: ".xpertpoint-portfolio-grid-item",
 						layoutMode: "masonry",
 						masonry: {
 							gutter: parseInt(programmes_grid_options.item_spacing) || 0, 

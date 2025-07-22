@@ -6,24 +6,24 @@
  */
 
 // Includes the files needed for the theme updater
-if ( ! class_exists( 'AWAIKEN_Theme_Updater_Admin' ) ) {
+if ( ! class_exists( 'XPERTPOINT_Theme_Updater_Admin' ) ) {
 	include dirname( __FILE__ ) . '/theme-updater-admin.php';
 }
 
 // Loads the updater classes
-$updater = new AWAIKEN_Theme_Updater_Admin(
+$updater = new XPERTPOINT_Theme_Updater_Admin(
 	// Config settings
 	array(
-		'remote_api_url' => 'https://awaikenthemes.com/', // Site where EDD is hosted
-		'tf_pc_val_api_url' => 'https://awaikenthemes.com/wp-json/themeforest/v1/validate-purchase', // Site where EDD is hosted
-		'item_name'      => AWAIKEN_ITEM_NAME, // Name of theme
-		'theme_slug'     => AWAIKEN_THEME_SLUG, // Theme slug
+		'remote_api_url' => 'https://xpertpoin8.com/', // Site where EDD is hosted
+		'tf_pc_val_api_url' => 'https://xpertpoin8.com/wp-json/themeforest/v1/validate-purchase', // Site where EDD is hosted
+		'item_name'      => XPERTPOINT_ITEM_NAME, // Name of theme
+		'theme_slug'     => XPERTPOINT_THEME_SLUG, // Theme slug
 		'version'        => wp_get_theme( get_template() )->get( 'Version' ), // The current version of this theme
-		'author'         => 'Awaiken', // The author of this theme
+		'author'         => 'Xpertpoint', // The author of this theme
 		'download_id'    => '', // Optional, used for generating a license renewal link
 		'renew_url'      => '', // Optional, allows for a custom license renewal link
 		'beta'           => false, // Optional, set to true to opt into beta versions
-		'item_id'        => AWAIKEN_ITEM_ID,
+		'item_id'        => XPERTPOINT_ITEM_ID,
 	),
 	// Strings
 	array(

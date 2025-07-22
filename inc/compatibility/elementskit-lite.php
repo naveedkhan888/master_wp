@@ -1,5 +1,5 @@
 <?php
-namespace Awaiken\Compatibility;
+namespace Xpertpoint\Compatibility;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -9,7 +9,7 @@ if ( ! class_exists( 'ElementsKit_Lite' ) ) {
 	return;
 }
 
-class Awaiken_ElementsKit_Lite {
+class Xpertpoint_ElementsKit_Lite {
 
 	private static $instance;
 
@@ -67,8 +67,8 @@ class Awaiken_ElementsKit_Lite {
 
 	public function onboarded_status() {
 
-		add_option('awaiken_default_ekit_settings', 1);
-		if ( get_option('awaiken_default_ekit_settings') == 1 ) {
+		add_option('xpertpoint_default_ekit_settings', 1);
+		if ( get_option('xpertpoint_default_ekit_settings') == 1 ) {
 
 			update_option( 'elements_kit_onboard_status', 'onboarded' );
 
@@ -220,7 +220,7 @@ class Awaiken_ElementsKit_Lite {
 			$elemkit_options[ 'widget_list' ][ 'yelp' ][ 'status' ] = 'inactive';
 
 			update_option( 'elementskit_options', $elemkit_options );
-			update_option('awaiken_default_ekit_settings', 0);
+			update_option('xpertpoint_default_ekit_settings', 0);
 		}
 
 	}
@@ -248,4 +248,4 @@ class Awaiken_ElementsKit_Lite {
 	}
 
 }
-Awaiken_ElementsKit_Lite::instance();
+Xpertpoint_ElementsKit_Lite::instance();

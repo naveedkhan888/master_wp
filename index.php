@@ -15,11 +15,11 @@ get_header();
 
 if ( is_page() ) {
 	get_template_part( 'template-parts/page' );
-} elseif ( is_singular('awaiken-programmes') ) {
+} elseif ( is_singular('xpertpoint-programmes') ) {
 	get_template_part( 'template-parts/single-programmes' );
 } elseif ( is_singular() ) {
 	get_template_part( 'template-parts/single' );
-} elseif ( is_post_type_archive('awaiken-programmes') || is_tax('awaiken-programmes-category') ) {
+} elseif ( is_post_type_archive('xpertpoint-programmes') || is_tax('xpertpoint-programmes-category') ) {
 	get_template_part( 'template-parts/archive-programmes' );
 } elseif ( is_archive() || is_home() ) {
 	get_template_part( 'template-parts/archive' );

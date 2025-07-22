@@ -19,7 +19,7 @@ else{
 while ( have_posts() ) :
 	the_post();
 	
-	$secondary_image = get_post_meta(get_the_ID(), 'awaiken_secondary_image', true);
+	$secondary_image = get_post_meta(get_the_ID(), 'xpertpoint_secondary_image', true);
 	if(empty($secondary_image)) {
 		$background_image 	= get_theme_mod( 'blog_page_header_background_image',$MASTERWP_STORAGE['blog_page_header_background_image'] );
 		if($background_image) {

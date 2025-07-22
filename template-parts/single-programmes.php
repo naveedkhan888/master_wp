@@ -18,7 +18,7 @@ while ( have_posts() ) :
 		$column = 'col-lg-9 col-md-12';
 	}
 
-	$secondary_image = get_post_meta(get_the_ID(), 'awaiken_secondary_image', true);
+	$secondary_image = get_post_meta(get_the_ID(), 'xpertpoint_secondary_image', true);
 	if(empty($secondary_image)) {
 		$background_image 	= get_theme_mod( 'programmes_page_header_background_image', $MASTERWP_STORAGE['programmes_page_header_background_image'] );
 		if($background_image) {

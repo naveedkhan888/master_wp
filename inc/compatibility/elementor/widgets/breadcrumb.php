@@ -27,7 +27,7 @@ class masterwp_widget_breadcrumb extends Widget_Base {
 	}
 
 	public function get_keywords() {
-		return array( 'awaiken', 'breadcrumbs', 'crumbs', 'list' );
+		return array( 'xpertpoint', 'breadcrumbs', 'crumbs', 'list' );
 	}
 
 

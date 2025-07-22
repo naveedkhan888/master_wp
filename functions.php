@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'MASTERWP_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
 define( 'MASTERWP_THEME_DIR', get_template_directory() );
 define( 'MASTERWP_THEME_URL', get_template_directory_uri() );
-define( 'AWAIKEN_ITEM_ID', 8576 );
-define( 'AWAIKEN_ITEM_NAME', 'Masterwp' );
-define( 'AWAIKEN_THEME_SLUG', 'masterwp' );
-define( 'AWAIKEN_MP', 'TF' ); 
+define( 'XPERTPOINT_ITEM_ID', 8576 );
+define( 'XPERTPOINT_ITEM_NAME', 'Masterwp' );
+define( 'XPERTPOINT_THEME_SLUG', 'masterwp' );
+define( 'XPERTPOINT_MP', 'TF' ); 
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.

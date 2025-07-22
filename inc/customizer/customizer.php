@@ -7,11 +7,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
 * Set our Customizer default options
 */
-if ( ! function_exists( 'awaiken_generate_defaults' ) ) {
-	function awaiken_generate_defaults() {
+if ( ! function_exists( 'xpertpoint_generate_defaults' ) ) {
+	function xpertpoint_generate_defaults() {
 		global $MASTERWP_STORAGE;
 
-		return apply_filters( 'awaiken_customizer_defaults', $MASTERWP_STORAGE );
+		return apply_filters( 'xpertpoint_customizer_defaults', $MASTERWP_STORAGE );
 	}
 }
 
@@ -24,29 +24,29 @@ if ( ! function_exists( 'awaiken_generate_defaults' ) ) {
 /**
  * Adds the individual sections, settings, and controls to the theme customizer
  */
-class awaiken_initialise_customizer_settings {
+class xpertpoint_initialise_customizer_settings {
 	// Get our default values
 	private $defaults;
 
 	public function __construct() {
 		// Get our Customizer defaults
-		$this->defaults = awaiken_generate_defaults();
+		$this->defaults = xpertpoint_generate_defaults();
 
 
 		// Register sections
-		add_action( 'customize_register', array( $this, 'awaiken_add_customizer_sections' ) );
+		add_action( 'customize_register', array( $this, 'xpertpoint_add_customizer_sections' ) );
 		
 		// Register general control
-		add_action( 'customize_register', array( $this, 'awaiken_register_general_options_controls' ) );
+		add_action( 'customize_register', array( $this, 'xpertpoint_register_general_options_controls' ) );
 		
 		// Register project control
-		add_action( 'customize_register', array( $this, 'awaiken_register_programmes_options_controls' ) );
+		add_action( 'customize_register', array( $this, 'xpertpoint_register_programmes_options_controls' ) );
 
 		// Register blog control
-		add_action( 'customize_register', array( $this, 'awaiken_register_blog_options_controls' ) );
+		add_action( 'customize_register', array( $this, 'xpertpoint_register_blog_options_controls' ) );
 		
 		// Register footer control
-		add_action( 'customize_register', array( $this, 'awaiken_register_footer_options_controls' ) );
+		add_action( 'customize_register', array( $this, 'xpertpoint_register_footer_options_controls' ) );
 		
 	}
 
@@ -54,7 +54,7 @@ class awaiken_initialise_customizer_settings {
 	/**
 	 * Register the Customizer sections
 	 */
-	public function awaiken_add_customizer_sections( $wp_customize ) {
+	public function xpertpoint_add_customizer_sections( $wp_customize ) {
 		
 		// Add section general options
 		$wp_customize->add_section( 'general_options' , array(
@@ -82,7 +82,7 @@ class awaiken_initialise_customizer_settings {
 	 * Register general option controls
 	 */
 
-	public function awaiken_register_general_options_controls( $wp_customize ) {  
+	public function xpertpoint_register_general_options_controls( $wp_customize ) {  
 		
 		$section	=	'general_options';
 		
@@ -241,7 +241,7 @@ class awaiken_initialise_customizer_settings {
 	 * Register programmes option controls
 	 */
 	
-	public function awaiken_register_programmes_options_controls( $wp_customize ) { 
+	public function xpertpoint_register_programmes_options_controls( $wp_customize ) { 
 			
 		$section	=	'programmes_options';
 
@@ -326,7 +326,7 @@ class awaiken_initialise_customizer_settings {
 	 * Register blog option controls
 	 */
 	
-	public function awaiken_register_blog_options_controls( $wp_customize ) { 
+	public function xpertpoint_register_blog_options_controls( $wp_customize ) { 
 			
 		$section	=	'blog_options';
 
@@ -442,7 +442,7 @@ class awaiken_initialise_customizer_settings {
 	 * Register footer controls
 	 */
 	
-	public function awaiken_register_footer_options_controls( $wp_customize ) { 
+	public function xpertpoint_register_footer_options_controls( $wp_customize ) { 
 		
 		$section	=	'footer_options';
 		
@@ -519,4 +519,4 @@ require_once MASTERWP_THEME_DIR . '/inc/customizer/custom-controls.php';
 /**
  * Initialise our Customizer settings
  */
-$awaiken_settings = new awaiken_initialise_customizer_settings();
+$xpertpoint_settings = new xpertpoint_initialise_customizer_settings();

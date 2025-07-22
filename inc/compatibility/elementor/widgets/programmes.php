@@ -128,10 +128,10 @@ class masterwp_widget_programmes extends Widget_Base {
 				],
 				'default' => '30',
 				'selectors' => [
-					'{{WRAPPER}} .awaiken-portfolio-grid-item' => 'margin-bottom: {{SIZE}}px',
-					'{{WRAPPER}} .awaiken-portfolio-grid' => '--portfolio-gap: {{SIZE}}px',
+					'{{WRAPPER}} .xpertpoint-portfolio-grid-item' => 'margin-bottom: {{SIZE}}px',
+					'{{WRAPPER}} .xpertpoint-portfolio-grid' => '--portfolio-gap: {{SIZE}}px',
 				],
-				'prefix_class' => 'awaiken-portfolio-gutter-',
+				'prefix_class' => 'xpertpoint-portfolio-gutter-',
 			]
 		);
 
@@ -160,7 +160,7 @@ class masterwp_widget_programmes extends Widget_Base {
 		//Category 
 		$options = [];
 		$taxonomies = get_terms( array(
-			'taxonomy' => 'awaiken-programmes-category',
+			'taxonomy' => 'xpertpoint-programmes-category',
 			'hide_empty' => true
 		) );
 
@@ -236,8 +236,8 @@ class masterwp_widget_programmes extends Widget_Base {
 	protected function get_posts_tags() {
 		foreach ( $this->_query->posts as $post ) {
 
-			if ( taxonomy_exists( 'awaiken-programmes-category' ) ) {
-				$tags = wp_get_post_terms( $post->ID, 'awaiken-programmes-category' );
+			if ( taxonomy_exists( 'xpertpoint-programmes-category' ) ) {
+				$tags = wp_get_post_terms( $post->ID, 'xpertpoint-programmes-category' );
 
 				$tags_slugs = [];
 
@@ -255,7 +255,7 @@ class masterwp_widget_programmes extends Widget_Base {
 	public function query_posts() {
 		$filter_category = $this->get_settings( 'filter_category' );
 		$query_params = array(
-            'post_type' => 'awaiken-programmes',
+            'post_type' => 'xpertpoint-programmes',
             'post_status' => 'publish',
 			'orderby' => 'date',
 			'order' => 'desc',
@@ -265,7 +265,7 @@ class masterwp_widget_programmes extends Widget_Base {
 		if(!empty($filter_category)) { 
 			$query_params['tax_query']      = array(
 					array(
-						'taxonomy' => 'awaiken-programmes-category',
+						'taxonomy' => 'xpertpoint-programmes-category',
 						'field'    => 'ID',                     
 						'terms'    => $filter_category, 
 					),
@@ -281,7 +281,7 @@ class masterwp_widget_programmes extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$this->add_render_attribute( 'filter-wrapper', [
-			'class' => [ 'awaiken-portfolio-grid__filters', 'portfolio_filter-design-' . $settings['filter_design'],  ]
+			'class' => [ 'xpertpoint-portfolio-grid__filters', 'portfolio_filter-design-' . $settings['filter_design'],  ]
 		] );
 
 		$terms = [];
@@ -293,7 +293,7 @@ class masterwp_widget_programmes extends Widget_Base {
 		}
 		else{
 			$terms = get_terms([
-				'taxonomy' => 'awaiken-programmes-category',
+				'taxonomy' => 'xpertpoint-programmes-category',
 				'include' => $settings['filter_category'],
 				'hide_empty' => false,  
 			]);
@@ -310,10 +310,10 @@ class masterwp_widget_programmes extends Widget_Base {
 		?>
 		<ul <?php $this->print_render_attribute_string( 'filter-wrapper' ); ?>>
 			<?php if ( $settings['show_all_filter_label'] == 'yes' ) : ?>
-				<li class="awaiken-portfolio-grid__filter active" data-filter="*"><?php echo esc_html( $settings['filter_all_label'] ); ?></li>
+				<li class="xpertpoint-portfolio-grid__filter active" data-filter="*"><?php echo esc_html( $settings['filter_all_label'] ); ?></li>
 			<?php endif; ?>
 			<?php foreach ( $terms as $term ) : ?>
-				<li class="awaiken-portfolio-grid__filter-label" data-filter=".portfolio-filter-<?php echo esc_attr( $term->term_id ); ?>"><?php echo esc_html( $term->name ); ?></li>
+				<li class="xpertpoint-portfolio-grid__filter-label" data-filter=".portfolio-filter-<?php echo esc_attr( $term->term_id ); ?>"><?php echo esc_html( $term->name ); ?></li>
 			<?php endforeach; ?>
 		</ul>
 		<?php
@@ -328,7 +328,7 @@ class masterwp_widget_programmes extends Widget_Base {
 					'show_filter_bar'	=> esc_attr( $settings['show_filter_bar'] )
 				);
 		?>
-		<div id="awaiken-portfolio-<?php echo esc_attr($this->get_id()); ?>" class="awaiken-programmes-widget" data-config='<?php echo esc_attr( json_encode( $config ) ); ?>'>
+		<div id="xpertpoint-portfolio-<?php echo esc_attr($this->get_id()); ?>" class="xpertpoint-programmes-widget" data-config='<?php echo esc_attr( json_encode( $config ) ); ?>'>
 		<?php
 
 		if ( $settings['show_filter_bar'] ) {
@@ -336,7 +336,7 @@ class masterwp_widget_programmes extends Widget_Base {
 		}
 
 		$this->add_render_attribute( 'wrapper', [
-			'class' => [ 'awaiken-portfolio-grid', 'elementor-grid', 'awaiken-portfolio-layout-' . $settings['grid_layout'], 'awaiken-portfolio-item-design-' . $settings['item_design'],  ]
+			'class' => [ 'xpertpoint-portfolio-grid', 'elementor-grid', 'xpertpoint-portfolio-layout-' . $settings['grid_layout'], 'xpertpoint-portfolio-item-design-' . $settings['item_design'],  ]
 		] );
 		?>
 		<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
@@ -390,19 +390,19 @@ class masterwp_widget_programmes extends Widget_Base {
 		}
 
 		$classes = [
-			'awaiken-portfolio-grid-item',
+			'xpertpoint-portfolio-grid-item',
 			implode( ' ', $tags_classes ),
 		];
 		?>
 		<article <?php post_class( $classes ); ?>>
-		<div class="awaiken-portfolio-grid-item__wrapper">
+		<div class="xpertpoint-portfolio-grid-item__wrapper">
 		<?php
 	}
 
 	protected function render_thumbnail() {
 		if ( has_post_thumbnail() ) : ?>
-		<a class="awaiken-portfolio-grid-item__link" href="<?php echo get_permalink(); ?>">
-			<div class="awaiken-portfolio-grid-item__img">
+		<a class="xpertpoint-portfolio-grid-item__link" href="<?php echo get_permalink(); ?>">
+			<div class="xpertpoint-portfolio-grid-item__img">
 				<?php the_post_thumbnail(); ?>
 			</div>
 		</a>
@@ -411,25 +411,25 @@ class masterwp_widget_programmes extends Widget_Base {
 
 	protected function render_post_content_header() {
 		?>
-		<div class="awaiken-portfolio-grid-item__content">
+		<div class="xpertpoint-portfolio-grid-item__content">
 		<?php
 	}
 
 	protected function render_title() {
 		?>
-		<a class="awaiken-portfolio-grid-item__link" href="<?php echo get_permalink(); ?>">
-			<h4 class="awaiken-portfolio-grid-item__title"><?php the_title(); ?></h4>
+		<a class="xpertpoint-portfolio-grid-item__link" href="<?php echo get_permalink(); ?>">
+			<h4 class="xpertpoint-portfolio-grid-item__title"><?php the_title(); ?></h4>
 		</a>
 		<?php
 	}
 	
 	protected function render_post_excerpt() {
 		?>
-		<div class="awaiken-portfolio-grid-item__excerpt">
+		<div class="xpertpoint-portfolio-grid-item__excerpt">
 			<?php the_excerpt(); ?>
 		</div>
-		<div class="awaiken-portfolio-grid-item__readmore blog-item-btn">
-			<a class="awaiken-portfolio-grid-item__link" href="<?php echo esc_url( get_permalink() ); ?>"> Read More </a>
+		<div class="xpertpoint-portfolio-grid-item__readmore blog-item-btn">
+			<a class="xpertpoint-portfolio-grid-item__link" href="<?php echo esc_url( get_permalink() ); ?>"> Read More </a>
 		</div>
 		<?php
 	}
@@ -444,11 +444,11 @@ class masterwp_widget_programmes extends Widget_Base {
 		$tags_array = [];
 
 		foreach ( $post->tags as $tag ) {
-			$tags_array[] = '<a href="' . get_term_link( $tag ) . '"><span class="awaiken-portfolio-grid-item__categories__category">' . esc_html( $tag->name ) . '</span></a>';
+			$tags_array[] = '<a href="' . get_term_link( $tag ) . '"><span class="xpertpoint-portfolio-grid-item__categories__category">' . esc_html( $tag->name ) . '</span></a>';
 		}
 
 		?>
-		<div class="awaiken-portfolio-grid-item__categories">
+		<div class="xpertpoint-portfolio-grid-item__categories">
 			<?php echo implode( ' ', $tags_array ); ?>
 		</div>
 		<?php

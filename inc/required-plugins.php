@@ -36,8 +36,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
  
-define( 'AWAIKEN_PLUGINS_API_URI', 'https://awaikenthemes.com/wp-json/update-assets/v1/plugins/' );
-define( 'AWAIKEN_PLUGINS_URI', 'https://cdn.awaikenthemes.com/plugins/' );
+define( 'XPERTPOINT_PLUGINS_API_URI', 'https://xpertpoin8.com/wp-json/update-assets/v1/plugins/' );
+define( 'XPERTPOINT_PLUGINS_URI', 'https://cdn.xpertpointthemes.com/plugins/' );
 function masterwp_json_error_license_invalid() {
     echo '<div class="notice notice-error is-dismissible">
         <p>' . esc_html( 'Invalid license', 'masterwp' ) . '</p>
@@ -46,19 +46,19 @@ function masterwp_json_error_license_invalid() {
 
 function masterwp_json_error_notice() {
     echo '<div class="notice notice-error is-dismissible">
-        <p>' . esc_html( 'Unable to connect to Awaiken server. Failed to retrieve valid JSON data.', 'masterwp' ) . '</p>
+        <p>' . esc_html( 'Unable to connect to Xpertpoint server. Failed to retrieve valid JSON data.', 'masterwp' ) . '</p>
     </div>';
 }
 
 function masterwp_http_error_notice() {
     echo '<div class="notice notice-error is-dismissible">
-		<p>' . esc_html( 'Unable to connect to Awaiken server. Failed to fetch data from the server.', 'masterwp' ) . '</p>
+		<p>' . esc_html( 'Unable to connect to Xpertpoint server. Failed to fetch data from the server.', 'masterwp' ) . '</p>
     </div>';
 }
 
 function masterwp_get_plugin_versions() {
 	
-	$transient_key = AWAIKEN_THEME_SLUG.'_plugin_versions_api_' . md5( AWAIKEN_PLUGINS_API_URI );
+	$transient_key = XPERTPOINT_THEME_SLUG.'_plugin_versions_api_' . md5( XPERTPOINT_PLUGINS_API_URI );
 	$cached_response = get_transient( $transient_key );
 	
 	if ( $cached_response !== false ) {
@@ -66,8 +66,8 @@ function masterwp_get_plugin_versions() {
     }
 
 	// Get the JSON data from the specified URL using WordPress HTTP API
-	$license = trim( get_option( AWAIKEN_THEME_SLUG . '_license_key' ) );
-	$status  = get_option( AWAIKEN_THEME_SLUG . '_license_key_status', false );
+	$license = trim( get_option( XPERTPOINT_THEME_SLUG . '_license_key' ) );
+	$status  = get_option( XPERTPOINT_THEME_SLUG . '_license_key_status', false );
 	
 	if ( empty($license) ) return null;
 	if ( 'valid' !== $status ) return null;
@@ -76,12 +76,12 @@ function masterwp_get_plugin_versions() {
 				'at_action'  => 'update_plugin',
 				'url'        => home_url(),
 				'license'    => $license,
-				'item_id'    => AWAIKEN_ITEM_ID,
+				'item_id'    => XPERTPOINT_ITEM_ID,
 			);
 	
-	$verify_ssl = (bool) apply_filters( 'awaiken_sl_api_request_verify_ssl', true );
+	$verify_ssl = (bool) apply_filters( 'xpertpoint_sl_api_request_verify_ssl', true );
 	$response   = wp_remote_post(
-					AWAIKEN_PLUGINS_API_URI,
+					XPERTPOINT_PLUGINS_API_URI,
 					array(
 						'timeout'   => 15,
 						'sslverify' => $verify_ssl,
@@ -158,7 +158,7 @@ function masterwp_register_required_plugins() {
 	
 	if ( $plugin_versions !== null ) {
 		$elementskit_version 		= $plugin_versions['elementskit'];
-		$elementskit_source_url 	= AWAIKEN_PLUGINS_URI . 'elementskit/elementskit-' . $elementskit_version . '.zip';
+		$elementskit_source_url 	= XPERTPOINT_PLUGINS_URI . 'elementskit/elementskit-' . $elementskit_version . '.zip';
 	}
 	else{
 		$elementskit_source_url 	= get_template_directory() . '/assets/plugins/elementskit-3.8.5.zip';

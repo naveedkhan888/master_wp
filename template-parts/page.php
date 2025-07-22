@@ -10,7 +10,7 @@ global $MASTERWP_STORAGE;
 while ( have_posts() ) :
 	the_post();
 
-$background_image = get_post_meta(get_the_ID(), 'awaiken_secondary_image', true);
+$background_image = get_post_meta(get_the_ID(), 'xpertpoint_secondary_image', true);
 if(empty($background_image)) {
 	$background_image 	= get_theme_mod( 'header_background_image', $MASTERWP_STORAGE['header_background_image'] );
 	if($background_image) {
