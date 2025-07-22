@@ -36,8 +36,8 @@ function masterwp_ocdi_import_files() {
   return array(
     array(
       'import_file_name'           => 'Demo',
-      'import_file_url'            => 'https://cdn.xpertpointthemes.com/demo-content/masterwp/masterwp.xml',
-      'import_customizer_file_url' => 'https://cdn.xpertpointthemes.com/demo-content/masterwp/masterwp.dat',
+      'import_file_url'            => get_template_directory_uri() . '/inc/data/masterwp.xml',
+      'import_customizer_file_url' => get_template_directory_uri() . '/inc/data/masterwp.dat',
 	  'import_preview_image_url'   => 'https://demo.xpertpointthemes.com/masterwp/assets/demo.jpg',
       'preview_url'                => 'https://demo.xpertpointthemes.com/masterwp/',
     )

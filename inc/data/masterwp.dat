@@ -1,0 +1,24 @@
+a:4:{s:8:"template";s:6:"lenity";s:4:"mods";a:15:{i:0;b:0;s:18:"nav_menu_locations";a:1:{s:6:"footer";i:7;}s:18:"custom_css_post_id";i:14066;s:33:"blog_page_header_background_image";i:15953;s:23:"header_background_image";i:15953;s:11:"custom_logo";i:16328;s:18:"small_heading_icon";i:0;s:16:"smooth_scrolling";i:1;s:14:"show_preloader";i:1;s:14:"preloader_icon";i:0;s:15:"blog_page_title";s:0:"";s:39:"programmes_page_header_background_image";i:5588;s:30:"programmes_archive_page_layout";s:10:"full-width";s:29:"programmes_single_page_layout";s:10:"full-width";s:21:"programmes_page_title";s:0:"";}s:7:"options";a:2:{s:9:"site_icon";s:5:"16330";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:558:".testimonial-slider-gbc .elementskit-single-testimonial-slider .row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.testimonial-slider-gbc .elementskit-testimonial-slider .swiper-pagination {
+  bottom: 80px !important;
+  left: auto;
+  right: 35px;
+  width: auto;
+  min-width: 66px;
+  transition: all 0.3s ease-in-out;
+}
+
+.scrolling-ticker_image img {
+  max-width: 1200px !important;
+.testimonials-count-item-gpl .elementor-counter{
+	gap:20px;
+}
+.testimonial-slider-gbc .elementskit-profile-image-card {
+    overflow: hidden;
+    border-radius: 30px;
+}
+";}
