@@ -38,9 +38,6 @@ class xpertpoint_initialise_customizer_settings {
 		
 		// Register general control
 		add_action( 'customize_register', array( $this, 'xpertpoint_register_general_options_controls' ) );
-		
-		// Register project control
-		add_action( 'customize_register', array( $this, 'xpertpoint_register_programmes_options_controls' ) );
 
 		// Register blog control
 		add_action( 'customize_register', array( $this, 'xpertpoint_register_blog_options_controls' ) );
@@ -59,11 +56,6 @@ class xpertpoint_initialise_customizer_settings {
 		// Add section general options
 		$wp_customize->add_section( 'general_options' , array(
 			'title'      => __( 'General Options', 'masterwp' ),
-		) );
-		
-		// Add section programmes options
-		$wp_customize->add_section( 'programmes_options' , array(
-			'title'      => __( 'Programmes Options', 'masterwp' ),
 		) );
 		
 		// Add section blog options
@@ -234,91 +226,6 @@ class xpertpoint_initialise_customizer_settings {
 			)
 		) );
 
-	}
-
-	
-	/**
-	 * Register programmes option controls
-	 */
-	
-	public function xpertpoint_register_programmes_options_controls( $wp_customize ) { 
-			
-		$section	=	'programmes_options';
-
-		// Programmes page title 
-		$wp_customize->add_setting( 'programmes_page_title', array(
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-
-		$wp_customize->add_control( 'programmes_page_title', array(
-			'type' => 'text',
-			'section' => $section,
-			'label'       => esc_html__( 'Programmes Page Archive Title', 'masterwp' ),
-		) );
-		
-		// Header background image
-		$wp_customize->add_setting( 'programmes_page_header_background_image',
-			array(
-				'default' => '',
-				'transport' => 'refresh',
-				'sanitize_callback' => 'absint'
-			)
-		);
-		
-		$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'programmes_page_header_background_image',
-			array(
-				'label' => __( 'Header Background Image', 'masterwp' ),
-				'description' => esc_html__( 'Header background image for programmes archive and single pages that are not created using Elementor.', 'masterwp' ),
-				'section' => $section,
-				'mime_type' => 'image',
-				'button_labels' => array(
-					'select' => __( 'Select File', 'masterwp' ),
-					'change' => __( 'Change File', 'masterwp' ),
-					'default' => __( 'Default', 'masterwp' ),
-					'remove' => __( 'Remove', 'masterwp' ),
-					'placeholder' => __( 'No file selected', 'masterwp' ),
-					'frame_title' => __( 'Select File', 'masterwp' ),
-					'frame_button' => __( 'Choose File', 'masterwp' ),
-				)
-			)
-		) );
-		
-		// Archive page layout
-		$wp_customize->add_setting( 'programmes_archive_page_layout', array(
-		  'default' => $this->defaults['programmes_archive_page_layout'],
-		   'sanitize_callback' => 'sanitize_text_field',
-		) );
-		
-		$wp_customize->add_control( 'programmes_archive_page_layout', array(
-			  'label'          => __( 'Programmes Archive Page Layout', 'masterwp' ),
-			  'section' => $section,
-			  'settings' => 'programmes_archive_page_layout',
-			  'type' => 'radio',
-			  'choices' => array(
-				'full-width'   => __( 'Full Width', 'masterwp' ),
-				'with-sidebar'  => __( 'With Sidebar', 'masterwp' )
-			  ),
-		) );
-		
-		// Archive page single page layout
-		$wp_customize->add_setting( 'programmes_single_page_layout', array(
-		  'default' => $this->defaults['programmes_single_page_layout'],
-		   'sanitize_callback' => 'sanitize_text_field',
-		) );
-		
-		$wp_customize->add_control( 'programmes_single_page_layout', array(
-			  'label'          => __( 'Programmes Single Layout', 'masterwp' ),
-			  'description' => esc_html__( 'Works with the Default Template only.', 'masterwp' ),
-			  'section' => $section,
-			  'settings' => 'programmes_single_page_layout',
-			  'type' => 'radio',
-			  'choices' => array(
-				'full-width'   => __( 'Full Width', 'masterwp' ),
-				'with-sidebar'  => __( 'With Sidebar', 'masterwp' )
-			  ),
-		) );
-		
 	}
 	
 	
